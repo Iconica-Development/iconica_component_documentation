@@ -1,0 +1,49 @@
+name: Generate and Commit Documentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository_url:
+        description: 'URL of the package repository'
+        required: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone central repository
+      uses: actions/checkout@v4
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        cache: true
+        cache-key: ${{ runner.OS }}-flutter-install-cache
+    - name: Clone package repository
+      run: git clone ${{ github.event.inputs.repository_url }} package/
+
+    - name: Install dependencies
+      run: |
+        cd package/
+        dart pub get
+
+    - name: Generate documentation
+      run: |
+        cd package/
+        dart doc
+
+    - name: Move documentation to subfolder
+      run: |
+        REPO_NAME="${{ github.event.inputs.repository_url }}"
+        REPO_NAME="${REPO_NAME/https:\/\/github.com\//}"
+        REPO_NAME="${REPO_NAME/\//'-'}"
+        mkdir -p docs/$REPO_NAME
+        cp -r package/doc/* docs/$REPO_NAME/
+
+    - name: Commit changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "Update documentation for ${{ github.event.inputs.repository_url }}"
+        git push
