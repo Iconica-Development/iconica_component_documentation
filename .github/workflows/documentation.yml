@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd package/
-        dart pub get
+        flutter pub get
 
     - name: Generate documentation
       run: |
@@ -39,6 +39,32 @@ jobs:
         REPO_NAME="${REPO_NAME/\//'-'}"
         mkdir -p docs/$REPO_NAME
         cp -r package/doc/* docs/$REPO_NAME/
+
+    - name: Cleanup
+      run: |
+        rm -rf package/
+    - name: Update Index HTML  
+      run: |
+        echo "<!DOCTYPE html>" > ./docs/index.html
+        echo "<html lang=\"en\">" >> ./docs/index.html
+        echo "<head>" >> ./docs/index.html
+        echo "    <meta charset=\"UTF-8\">" >> ./docs/index.html
+        echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> ./docs/index.html
+        echo "    <title>Package Documentation</title>" >> ./docs/index.html
+        echo "</head>" >> ./docs/index.html
+        echo "<body>" >> ./docs/index.html
+        echo "    <h1>Package Documentation</h1>" >> ./docs/index.html
+        echo "    <ul>" >> ./docs/index.html
+        for dir in ./docs/*; do
+          if [ -d "$dir" ] && [ "$(basename "$dir")" != "api" ]; then # Exclude the 'api' folder if it's not a package
+            PACKAGE_NAME=$(basename "$dir")
+            PACKAGE_URL="./$(basename "$dir")/index.html"
+            echo "        <li><a href=\"$PACKAGE_URL\">$PACKAGE_NAME</a></li>" >> ./docs/index.html
+          fi
+        done
+        echo "    </ul>" >> ./docs/index.html
+        echo "</body>" >> ./docs/index.html
+        echo "</html>" >> ./docs/index.html
 
     - name: Commit changes
       run: |
