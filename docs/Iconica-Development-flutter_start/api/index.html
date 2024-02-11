@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 7.0.1-wip">
+  <meta name="description" content="flutter_start API docs, for the Dart programming language.">
+  <title>flutter_start - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">flutter_start package</li>
+  </ol>
+  <div class="self-name">flutter_start</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="flutter_start">flutter_start</h1>
+<p>Flutter_start is a package that allows you to jumpstart your application with a splashScreen, introduction and a home.</p>
+<h2 id="setup">Setup</h2>
+<p>To use this package, add flutter_start as a dependency in your pubspec.yaml file:</p>
+<pre class="language-dart"><code>  flutter_start:
+    git:
+      url: https://github.com/Iconica-Development/flutter_start
+      ref: &lt;Version&gt;
+</code></pre>
+<p>To use the module within your Flutter-application with predefined <code>Go_router</code> routes you should add the following:</p>
+<p>Add go_router as dependency to your project.
+Add the following configuration to your flutter_application:</p>
+<pre class="language-dart"><code>StartUserStoryConfiguration startUserStoryConfiguration = const StartUserStoryConfiguration();
+</code></pre>
+<p>and set the values as you wish.</p>
+<p>Next add the <code>StartUserStoryConfiguration</code> to <code>getStartStoryRoutes</code> Like so:</p>
+<pre class="language-dart"><code>List&lt;GoRoute&gt; getStartRoutes() =&gt; getStartStoryRoutes(
+      startUserStoryConfiguration,
+    );
+</code></pre>
+<p>Finally add the <code>getStartRoutes</code> to your <code>Go_router</code> routes like so:</p>
+<pre class="language-dart"><code>final GoRouter _router = GoRouter(
+  routes: &lt;RouteBase&gt;[
+    ...getStartRoutes()
+  ],
+);
+</code></pre>
+<p>The routes that can be used to navigate are:</p>
+<p>For routing to the <code>SplashScreen</code>:</p>
+<pre class="language-dart"><code>  static const String splashScreen = '/splashScreen';
+</code></pre>
+<p>For routing to the <code>Introduction</code>:</p>
+<pre class="language-dart"><code>  static const String introduction = '/introduction';
+</code></pre>
+<p>For routing to the <code>HomeEntry</code>:</p>
+<pre class="language-dart"><code>  static const String home = '/home';
+</code></pre>
+<p>If you don't want a SplashScreen in your application set your initialRoute to <code>Introduction</code>:</p>
+<pre class="language-dart"><code>final GoRouter _router = GoRouter(
+  routes: &lt;RouteBase&gt;[
+    ...getStartRoutes()
+  ],
+    initialLocation: '/introduction',
+);
+</code></pre>
+<p>To use the module within your Flutter-application without predefined <code>Go_router</code> routes but with <code>Navigator</code> routes add the following :</p>
+<p>Add the following configuration to your flutter_application:</p>
+<pre class="language-dart"><code>StartUserStoryConfiguration startUserStoryConfiguration = const StartUserStoryConfiguration();
+</code></pre>
+<p>Add the following code to the build-method of a chosen widget:</p>
+<pre class="language-dart"><code>startNavigatorUserStory(startUserStoryConfiguration, context);
+</code></pre>
+<p>If the splashScreenBuilder is not used the SplashScreen will be skipped.</p>
+<p>The <code>StartUserStoryConfiguration</code> has its own parameters, as specified below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>splashScreenBuilder</td>
+<td>The builder for the splashScreen.</td>
+</tr>
+<tr>
+<td>introductionOptions</td>
+<td>The options for the introduction.</td>
+</tr>
+<tr>
+<td>introductionService</td>
+<td>The service for the introduction. Default IntroductionService (SharedPreferencesIntroductionDataProvider())</td>
+</tr>
+<tr>
+<td>homeEntry</td>
+<td>The widget that will be shown after the introduction.</td>
+</tr>
+<tr>
+<td>introductionFallbackScreen</td>
+<td>The widget that will be shown when the introduction is skipped.</td>
+</tr>
+<tr>
+<td>introductionScrollPhysics</td>
+<td>The scrollPhysics for the introduction.</td>
+</tr>
+<tr>
+<td>showIntroduction</td>
+<td>Whether or not the introduction should be shown.</td>
+</tr>
+<tr>
+<td>useKillswitch</td>
+<td>Whether or not the killswitch should be used. This will only work when you use the splashScreen and you need to have a active internet connection</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="flutter_start">
+  <span class="name"><a href="flutter_start/flutter_start-library.html">flutter_start</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">flutter_start package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">flutter_start</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="flutter_start/flutter_start-library.html">flutter_start</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    flutter_start
+      2.0.2
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
