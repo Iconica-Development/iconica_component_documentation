@@ -58,7 +58,7 @@ jobs:
         for dir in ./docs/*; do
           if [ -d "$dir" ] && [ "$(basename "$dir")" != "api" ]; then # Exclude the 'api' folder if it's not a package
             PACKAGE_NAME=$(basename "$dir")
-            PACKAGE_URL="./$(basename "$dir")/index.html"
+            PACKAGE_URL="./$(basename "$dir")/api/index.html"
             echo "        <li><a href=\"$PACKAGE_URL\">$PACKAGE_NAME</a></li>" >> ./docs/index.html
           fi
         done
