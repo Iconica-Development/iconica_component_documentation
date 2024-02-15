@@ -40,6 +40,8 @@ jobs:
           if [ -d "$PACKAGE_DIR" ]; then
             cd $PACKAGE_DIR
             flutter pub get
+            cp ../../header.html ./header.html
+            cp ../../dartdoc_options.yaml ./dartdoc_options.yaml
             flutter pub global activate dartdoc
             flutter pub global run dartdoc
             echo "Listing contents of $PACKAGE_DIR/doc/api:"
@@ -61,6 +63,8 @@ jobs:
       run: |
         cd repository/
         flutter pub get
+        cp ../header.html ./header.html
+        cp ../dartdoc_options.yaml ./dartdoc_options.yaml
         flutter pub global activate dartdoc
         flutter pub global run dartdoc
         echo "Listing contents of repository/doc/api:"
