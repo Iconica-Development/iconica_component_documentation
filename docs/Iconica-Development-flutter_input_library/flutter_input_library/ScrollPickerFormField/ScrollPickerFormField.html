@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../../static-assets/github.css?v1">
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">flutter_input_library</a></li>
-    <li><a href="../../flutter_input_library/flutter_input_library-library.html">flutter_input_library</a></li>
+    <li><a href="../../flutter_input_library/flutter_input_library-library.html">flutter_input_library.dart</a></li>
     <li><a href="../../flutter_input_library/ScrollPickerFormField-class.html">ScrollPickerFormField<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
     <li class="self-crumb">ScrollPickerFormField constructor</li>
   </ol>
@@ -37,14 +37,14 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
@@ -82,7 +82,27 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ScrollPickerFormField</code></pre>
+  <pre class="language-dart"><code class="language-dart">ScrollPickerFormField({
+  required List&lt;T&gt; values,
+  required ScrollPickerDecoration decoration,
+  required FormFieldSetter&lt;T&gt; super.onSaved,
+  required String Function(T) childToString,
+  int? initialIndex,
+  void Function(T value)? onChanged,
+  super.key,
+}) : super(
+        initialValue: values[initialIndex ?? (values.length &#47; 2).floor()],
+        builder: (FormFieldState&lt;T&gt; state) =&gt; ScrollPicker(
+          list: values.map((e) =&gt; childToString(e)).toList(),
+          decoration: decoration,
+          initialIndex: initialIndex,
+          onChanged: (int index) {
+            onChanged?.call(values[index]);
+
+            state.didChange(values[index]);
+          },
+        ),
+      );</code></pre>
 </section>
 
 
