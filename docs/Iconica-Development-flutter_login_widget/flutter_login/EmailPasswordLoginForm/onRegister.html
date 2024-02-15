@@ -62,7 +62,7 @@
 
         <section class="multi-line-signature">
           
-          (<a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span></span>)</span>?)
+          (<a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)</span>?)
           <span class="name ">onRegister</span>
           <div class="features"><span class="feature">final</span></div>
 
@@ -72,7 +72,11 @@
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final FutureOr&lt;void&gt; Function(String email, String password)? onRegister;</code></pre>
+  <pre class="language-dart"><code class="language-dart">final FutureOr&lt;void&gt; Function(
+  String email,
+  String password,
+  BuildContext context,
+)? onRegister;</code></pre>
 </section>
 
 
@@ -106,7 +110,7 @@
 <footer>
   <span class="no-break">
     flutter_login
-      5.1.3
+      5.1.4
   </span>
 
   
