@@ -1,2 +1,4 @@
 dartdoc:
   showUndocumentedCategories: true
+  header:
+    - "header.html"
