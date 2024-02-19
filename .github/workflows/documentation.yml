@@ -49,14 +49,15 @@ jobs:
             if [ -d "doc/api" ]; then
               cd ../..
               PACKAGE_NAME=$(basename $PACKAGE_DIR)
-              mkdir -p ../docs/$PACKAGE_NAME
-              cp -r $PACKAGE_DIR/doc/api/* ../docs/$PACKAGE_NAME/
+              mkdir -p ../docs/Iconica-Development-$PACKAGE_NAME
+              cp -r $PACKAGE_DIR/doc/api/* ../docs/Iconica-Development-$PACKAGE_NAME/
             else
               echo "No documentation was generated for $PACKAGE_DIR"
               cd ../..
             fi
           fi
         done
+  
 
     - name: Generate documentation for single package
       if: steps.melos-check.outputs.melos == 'false'
