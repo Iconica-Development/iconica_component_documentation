@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -118,7 +119,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  var _ = getTranslator(context);
+  var translator = getTranslator(context);
 
   super.registerController(context);
 
@@ -134,7 +135,7 @@ Widget build(BuildContext context) {
     initialValue: controller.value,
     focusNode: focusNode,
     onSaved: controller.onSaved,
-    validator: (value) =&gt; controller.onValidate(value, _),
+    validator: (value) =&gt; controller.onValidate(value, translator),
     onChanged: (value) =&gt; controller.onChanged?.call(value),
     onFieldSubmitted: (value) =&gt; controller.onSubmit?.call(value),
     decoration: inputDecoration,
@@ -179,7 +180,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     flutter_form_wizard
-      6.2.5
+      6.3.0
   </span>
 
   
