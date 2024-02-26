@@ -86,7 +86,9 @@
 <li><span class="parameter" id="copyWith-param-firstComment"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">firstComment</span>, </span></li>
 <li><span class="parameter" id="copyWith-param-postLoadingError"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">postLoadingError</span>, </span></li>
 <li><span class="parameter" id="copyWith-param-timelineSelectionDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">timelineSelectionDescription</span>, </span></li>
-<li><span class="parameter" id="copyWith-param-searchHint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">searchHint</span>}</span></li>
+<li><span class="parameter" id="copyWith-param-searchHint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">searchHint</span>, </span></li>
+<li><span class="parameter" id="copyWith-param-postOverview"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">postOverview</span>, </span></li>
+<li><span class="parameter" id="copyWith-param-postIn"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">postIn</span>}</span></li>
 </ol>)
 
       
@@ -121,6 +123,8 @@
   String? postLoadingError,
   String? timelineSelectionDescription,
   String? searchHint,
+  String? postOverview,
+  String? postIn,
 }) =&gt;
     TimelineTranslations(
       noPosts: noPosts ?? this.noPosts,
@@ -148,6 +152,8 @@
       timelineSelectionDescription:
           timelineSelectionDescription ?? this.timelineSelectionDescription,
       searchHint: searchHint ?? this.searchHint,
+      postOverview: postOverview ?? this.postOverview,
+      postIn: postIn ?? this.postIn,
     );</code></pre>
 </section>
 
@@ -182,7 +188,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.0.0
+      2.1.0
   </span>
 
   

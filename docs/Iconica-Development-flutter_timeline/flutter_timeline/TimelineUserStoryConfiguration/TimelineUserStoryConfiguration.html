@@ -87,11 +87,37 @@
 <li><span class="parameter" id="-param-filterEnabled"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">filterEnabled</span> = <span class="default-value">false</span>, </span></li>
 <li><span class="parameter" id="-param-postWidgetBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">postWidgetBuilder</span>(<ol class="parameter-list"><li><span class="parameter" id="param-post"><span class="type-annotation"><a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a></span> <span class="parameter-name">post</span></span></li>
 </ol>
-)?}</span></li>
+)?, </span></li>
+<li><span class="parameter" id="-param-enablePostOverviewScreen"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enablePostOverviewScreen</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
     </section>
 
     
+<section class="desc markdown">
+  <p>Constructs a <a href="../../flutter_timeline/TimelineUserStoryConfiguration-class.html">TimelineUserStoryConfiguration</a> with the specified
+parameters.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/service.html">service</a> is the TimelineService responsible for fetching user story data.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/optionsBuilder.html">optionsBuilder</a> is a function that builds TimelineOptions based on the
+given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/userId.html">userId</a> is the ID of the user associated with this user story
+configuration. Default is 'test_user'.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/openPageBuilder.html">openPageBuilder</a> is a function that defines the behavior when a page
+needs to be opened. This function should accept a <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and a
+child widget.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/onPostTap.html">onPostTap</a> is a callback function invoked when a timeline post is
+tapped. It should accept a <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and the tapped post.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/onUserTap.html">onUserTap</a> is a callback function invoked when the user's profile is
+tapped. It should accept a <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and the user ID of the tapped
+user.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/onPostDelete.html">onPostDelete</a> is a callback function invoked when a post deletion is
+requested. It should accept a <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and the post widget. This
+function can return a widget to be displayed after the post is deleted.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/filterEnabled.html">filterEnabled</a> determines whether filtering functionality is enabled for
+this user story timeline. Default is false.</p>
+<p><a href="../../flutter_timeline/TimelineUserStoryConfiguration/postWidgetBuilder.html">postWidgetBuilder</a> is a function that builds a widget for a timeline
+post. It should accept a <a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a> and return a widget representing
+that post.</p>
+</section>
 
 
     
@@ -107,6 +133,7 @@
   this.onPostDelete,
   this.filterEnabled = false,
   this.postWidgetBuilder,
+  this.enablePostOverviewScreen = false,
 });</code></pre>
 </section>
 
@@ -141,7 +168,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline
-      2.0.0
+      2.1.0
   </span>
 
   

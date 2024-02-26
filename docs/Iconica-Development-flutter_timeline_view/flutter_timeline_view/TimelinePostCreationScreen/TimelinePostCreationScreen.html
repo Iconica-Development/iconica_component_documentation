@@ -70,6 +70,9 @@
 <li><span class="parameter" id="-param-service"><span>required</span> <span class="type-annotation">TimelineService</span> <span class="parameter-name">service</span>, </span></li>
 <li><span class="parameter" id="-param-options"><span>required</span> <span class="type-annotation"><a href="../../flutter_timeline_view/TimelineOptions-class.html">TimelineOptions</a></span> <span class="parameter-name">options</span>, </span></li>
 <li><span class="parameter" id="-param-postCategory"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">postCategory</span>, </span></li>
+<li><span class="parameter" id="-param-onPostOverview"><span class="type-annotation">void</span> <span class="parameter-name">onPostOverview</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation">TimelinePost</span></span></li>
+</ol>
+)?, </span></li>
 <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
 </ol>)
     </section>
@@ -86,6 +89,7 @@
   required this.service,
   required this.options,
   this.postCategory,
+  this.onPostOverview,
   super.key,
 });</code></pre>
 </section>
@@ -121,7 +125,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.0.0
+      2.1.0
   </span>
 
   

@@ -93,7 +93,12 @@
 <li><span class="parameter" id="-param-postWidgetHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">postWidgetHeight</span>, </span></li>
 <li><span class="parameter" id="-param-postPadding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">postPadding</span> = <span class="default-value">const EdgeInsets.all(12.0)</span>, </span></li>
 <li><span class="parameter" id="-param-filterOptions"><span class="type-annotation"><a href="../../flutter_timeline/FilterOptions-class.html">FilterOptions</a></span> <span class="parameter-name">filterOptions</span> = <span class="default-value">const FilterOptions()</span>, </span></li>
-<li><span class="parameter" id="-param-categoriesOptions"><span class="type-annotation"><a href="../../flutter_timeline/CategoriesOptions-class.html">CategoriesOptions</a></span> <span class="parameter-name">categoriesOptions</span> = <span class="default-value">const CategoriesOptions()</span>}</span></li>
+<li><span class="parameter" id="-param-categoriesOptions"><span class="type-annotation"><a href="../../flutter_timeline/CategoriesOptions-class.html">CategoriesOptions</a></span> <span class="parameter-name">categoriesOptions</span> = <span class="default-value">const CategoriesOptions()</span>, </span></li>
+<li><span class="parameter" id="-param-requireImageForPost"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">requireImageForPost</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="-param-minTitleLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">minTitleLength</span>, </span></li>
+<li><span class="parameter" id="-param-maxTitleLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxTitleLength</span>, </span></li>
+<li><span class="parameter" id="-param-minContentLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">minContentLength</span>, </span></li>
+<li><span class="parameter" id="-param-maxContentLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxContentLength</span>}</span></li>
 </ol>)
     </section>
 
@@ -136,6 +141,11 @@
   this.postPadding = const EdgeInsets.all(12.0),
   this.filterOptions = const FilterOptions(),
   this.categoriesOptions = const CategoriesOptions(),
+  this.requireImageForPost = false,
+  this.minTitleLength,
+  this.maxTitleLength,
+  this.minContentLength,
+  this.maxContentLength,
 });</code></pre>
 </section>
 
@@ -170,7 +180,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline
-      2.0.0
+      2.1.0
   </span>
 
   
