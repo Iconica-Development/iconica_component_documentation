@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -84,7 +85,7 @@
         path: StartUserStoryRoutes.splashScreen,
         pageBuilder: (context, state) {
           var go = context.go;
-          var killSwitchIsActive = false;
+          var isAllowedToPassThrough = false;
           var introductionSeen = false;
           String? routeAfterSplash;
           Future&lt;void&gt; splashLoadingMethod() async {
@@ -94,7 +95,7 @@
                   Duration.zero,
                   () async {
                     if (configuration.useKillswitch)
-                      killSwitchIsActive =
+                      isAllowedToPassThrough =
                           await KillswitchService().isKillswitchActive();
                     var introService = configuration.introductionService ??
                         IntroductionService(
@@ -116,10 +117,9 @@
               ],
             );
 
-            if (configuration.useKillswitch &amp;&amp; killSwitchIsActive) return;
+            if (configuration.useKillswitch &amp;&amp; isAllowedToPassThrough) return;
 
-            if (!configuration.showIntroduction ||
-                (introductionSeen &amp;&amp; !configuration.alwaysShowIntroduction)) {
+            if (!configuration.showIntroduction || introductionSeen) {
               return go(
                 routeAfterSplash ?? StartUserStoryRoutes.home,
               );
@@ -166,16 +166,20 @@
             physics: configuration.introductionScrollPhysics,
             child: configuration.introductionFallbackScreen,
           );
+
           return buildScreenWithoutTransition(
             context: context,
             state: state,
-            child: configuration.introductionBuilder?.call(
-                  context,
-                  introduction,
-                ) ??
-                Scaffold(
-                  body: introduction,
-                ),
+            child: PopScope(
+              canPop: configuration.canPopFromIntroduction,
+              child: configuration.introductionBuilder?.call(
+                    context,
+                    introduction,
+                  ) ??
+                  Scaffold(
+                    body: introduction,
+                  ),
+            ),
           );
         },
       ),
@@ -212,7 +216,7 @@
 <footer>
   <span class="no-break">
     flutter_start
-      2.0.3
+      2.0.5
   </span>
 
   
