@@ -84,6 +84,11 @@ jobs:
       run: |
         rm -rf repository/
 
+    - name: Pull latest changes before updating index HTML
+      run: |
+        git -C ${{ github.workspace }}/ fetch origin
+        git -C ${{ github.workspace }}/ pull origin master
+
     - name: Update Index HTML  
       run: |
         echo "<!DOCTYPE html>" > ./docs/index.html
