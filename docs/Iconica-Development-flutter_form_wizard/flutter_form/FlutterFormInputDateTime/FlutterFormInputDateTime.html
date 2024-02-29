@@ -66,6 +66,9 @@
       <span class="name ">FlutterFormInputDateTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-controller">{<span>required</span> <span class="type-annotation"><a href="../../flutter_form/FlutterFormInputController-class.html">FlutterFormInputController</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">controller</span>, </span></li>
 <li><span class="parameter" id="-param-inputType"><span>required</span> <span class="type-annotation"><a href="../../flutter_form/FlutterFormDateTimeType.html">FlutterFormDateTimeType</a></span> <span class="parameter-name">inputType</span>, </span></li>
 <li><span class="parameter" id="-param-dateFormat"><span>required</span> <span class="type-annotation"><a href="https://pub.dev/documentation/intl/0.18.1/intl/DateFormat-class.html">DateFormat</a></span> <span class="parameter-name">dateFormat</span>, </span></li>
+<li><span class="parameter" id="-param-validationMessage"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">validationMessage</span>, </span></li>
+<li><span class="parameter" id="-param-decoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a>?</span> <span class="parameter-name">decoration</span>, </span></li>
+<li><span class="parameter" id="-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">style</span>, </span></li>
 <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
 <li><span class="parameter" id="-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">label</span>, </span></li>
 <li><span class="parameter" id="-param-showIcon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showIcon</span> = <span class="default-value">true</span>, </span></li>
@@ -73,13 +76,43 @@
 <li><span class="parameter" id="-param-lastDate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">lastDate</span>, </span></li>
 <li><span class="parameter" id="-param-initialDate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">initialDate</span>, </span></li>
 <li><span class="parameter" id="-param-initialDateTimeRange"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/DateTimeRange-class.html">DateTimeRange</a>?</span> <span class="parameter-name">initialDateTimeRange</span>, </span></li>
+<li><span class="parameter" id="-param-initialTime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>?</span> <span class="parameter-name">initialTime</span>, </span></li>
 <li><span class="parameter" id="-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/IconData-class.html">IconData</a></span> <span class="parameter-name">icon</span> = <span class="default-value">Icons.calendar_today</span>, </span></li>
+<li><span class="parameter" id="-param-initialValue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">initialValue</span>, </span></li>
+<li><span class="parameter" id="-param-onChanged"><span class="type-annotation">void</span> <span class="parameter-name">onChanged</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span></span></li>
+</ol>
+)?, </span></li>
+<li><span class="parameter" id="-param-onSaved"><span class="type-annotation">void</span> <span class="parameter-name">onSaved</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span></span></li>
+</ol>
+)?, </span></li>
+<li><span class="parameter" id="-param-validator"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">validator</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span></span></li>
+</ol>
+)?, </span></li>
+<li><span class="parameter" id="-param-autovalidateMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/AutovalidateMode.html">AutovalidateMode</a></span> <span class="parameter-name">autovalidateMode</span> = <span class="default-value">AutovalidateMode.disabled</span>, </span></li>
+<li><span class="parameter" id="-param-timePickerEntryMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TimePickerEntryMode.html">TimePickerEntryMode</a></span> <span class="parameter-name">timePickerEntryMode</span> = <span class="default-value">TimePickerEntryMode.dial</span>, </span></li>
 <li><span class="parameter" id="-param-enabled"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enabled</span> = <span class="default-value">true</span>, </span></li>
 <li><span class="parameter" id="-param-onTapEnabled"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">onTapEnabled</span> = <span class="default-value">true</span>}</span></li>
 </ol>)
     </section>
 
     
+<section class="desc markdown">
+  <p>Creates a <a href="../../flutter_form/FlutterFormInputDateTime-class.html">FlutterFormInputDateTime</a>.</p>
+<p>The <a href="../../flutter_form/FlutterFormInputWidget/controller.html">controller</a>, <a href="../../flutter_form/FlutterFormInputDateTime/inputType.html">inputType</a>, <a href="../../flutter_form/FlutterFormInputDateTime/dateFormat.html">dateFormat</a> are required parameters.
+The <a href="../../flutter_form/FlutterFormInputDateTime/label.html">label</a> parameter specifies the label of the input field.
+The <a href="../../flutter_form/FlutterFormInputDateTime/showIcon.html">showIcon</a> parameter determines whether to show an icon
+with the input field.
+The <a href="../../flutter_form/FlutterFormInputDateTime/firstDate.html">firstDate</a> and <a href="../../flutter_form/FlutterFormInputDateTime/lastDate.html">lastDate</a> parameters specify the range
+of selectable dates.
+The <a href="../../flutter_form/FlutterFormInputDateTime/initialDate.html">initialDate</a> parameter specifies the initial date for
+the input field.
+The <a href="../../flutter_form/FlutterFormInputDateTime/initialDateTimeRange.html">initialDateTimeRange</a> parameter specifies the initial
+date time range for the input field.
+The <a href="../../flutter_form/FlutterFormInputDateTime/icon.html">icon</a> parameter specifies the icon to show with the input field.
+The <a href="../../flutter_form/FlutterFormInputDateTime/enabled.html">enabled</a> parameter specifies whether the input field is enabled.
+The <a href="../../flutter_form/FlutterFormInputDateTime/onTapEnabled.html">onTapEnabled</a> parameter specifies whether tapping on
+the input field is enabled.</p>
+</section>
 
 
     
@@ -89,14 +122,24 @@
   required super.controller,
   required this.inputType,
   required this.dateFormat,
+  required this.validationMessage,
+  this.decoration,
+  this.style,
   super.key,
-  super.label,
+  this.label,
   this.showIcon = true,
   this.firstDate,
   this.lastDate,
   this.initialDate,
   this.initialDateTimeRange,
+  this.initialTime,
   this.icon = Icons.calendar_today,
+  this.initialValue,
+  this.onChanged,
+  this.onSaved,
+  this.validator,
+  this.autovalidateMode = AutovalidateMode.disabled,
+  this.timePickerEntryMode = TimePickerEntryMode.dial,
   this.enabled = true,
   this.onTapEnabled = true,
 });</code></pre>
@@ -133,7 +176,7 @@
 <footer>
   <span class="no-break">
     flutter_form_wizard
-      6.3.0
+      6.3.1
   </span>
 
   

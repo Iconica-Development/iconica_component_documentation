@@ -120,15 +120,13 @@ and</li>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
   super.registerController(context);
-
-  var translator = getTranslator(context);
-
   return input.FlutterFormInputPassword(
     enabled: enabled,
     initialValue: controller.value,
     focusNode: focusNode,
     onSaved: controller.onSaved,
-    validator: (value) =&gt; controller.onValidate(value, translator),
+    validator: validator ??
+        (value) =&gt; controller.onValidate(value, validationMessage),
     onChanged: (value) =&gt; controller.onChanged?.call(value),
     onFieldSubmitted: (value) =&gt; controller.onSubmit?.call(value),
     decoration: decoration,
@@ -167,7 +165,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     flutter_form_wizard
-      6.3.0
+      6.3.1
   </span>
 
   

@@ -118,22 +118,19 @@ and</li>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Widget build(BuildContext context) {
-  var translator = getTranslator(context);
-
-  return input.FlutterFormInputMultiLine(
-    enabled: enabled,
-    label: label,
-    hint: hint,
-    focusNode: focusNode,
-    initialValue: controller.value,
-    maxCharacters: maxCharacters,
-    onChanged: controller.onChanged,
-    onSaved: controller.onSaved,
-    validator: (v) =&gt; controller.onValidate(v, translator),
-    textCapitalization: textCapitalization,
-  );
-}</code></pre>
+Widget build(BuildContext context) =&gt; input.FlutterFormInputMultiLine(
+      enabled: enabled,
+      label: label,
+      hint: hint,
+      focusNode: focusNode,
+      initialValue: controller.value,
+      maxCharacters: maxCharacters,
+      onChanged: controller.onChanged,
+      onSaved: controller.onSaved,
+      validator: validator ??
+          (value) =&gt; controller.onValidate(value, validationMessage),
+      textCapitalization: textCapitalization,
+    );</code></pre>
 </section>
 
 
@@ -167,7 +164,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     flutter_form_wizard
-      6.3.0
+      6.3.1
   </span>
 
   

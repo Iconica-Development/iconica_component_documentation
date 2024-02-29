@@ -64,15 +64,26 @@
     <section class="multi-line-signature">
       const
       <span class="name ">FlutterFormInputSlider</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-controller">{<span>required</span> <span class="type-annotation"><a href="../../flutter_form/FlutterFormInputController-class.html">FlutterFormInputController</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span> <span class="parameter-name">controller</span>, </span></li>
+<li><span class="parameter" id="-param-validationMessage"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">validationMessage</span>, </span></li>
 <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
 <li><span class="parameter" id="-param-focusNode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/FocusNode-class.html">FocusNode</a>?</span> <span class="parameter-name">focusNode</span>, </span></li>
 <li><span class="parameter" id="-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">label</span>, </span></li>
+<li><span class="parameter" id="-param-validator"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">validator</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span></span></li>
+</ol>
+)?, </span></li>
 <li><span class="parameter" id="-param-minValue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">minValue</span> = <span class="default-value">0</span>, </span></li>
 <li><span class="parameter" id="-param-maxValue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">maxValue</span> = <span class="default-value">100</span>}</span></li>
 </ol>)
     </section>
 
     
+<section class="desc markdown">
+  <p>Creates a <a href="../../flutter_form/FlutterFormInputPassword-class.html">FlutterFormInputPassword</a>.</p>
+<p>The <a href="../../flutter_form/FlutterFormInputWidget/controller.html">controller</a> parameter is required.
+The <a href="../../flutter_form/FlutterFormInputWidget/focusNode.html">focusNode</a> parameter specifies the focus node of the input field.
+The <a href="../../flutter_form/FlutterFormInputWidget/label.html">label</a> parameter specifies the label of the input field.
+The <a href="../../flutter_form/FlutterFormInputWidget/enabled.html">enabled</a> parameter specifies whether the input field is enabled.</p>
+</section>
 
 
     
@@ -80,9 +91,11 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">const FlutterFormInputSlider({
   required super.controller,
+  required this.validationMessage,
   super.key,
   super.focusNode,
   super.label,
+  this.validator,
   this.minValue = 0,
   this.maxValue = 100,
 }) : assert(minValue &lt; maxValue, &#39;minValue must be less than maxValue&#39;);</code></pre>
@@ -119,7 +132,7 @@
 <footer>
   <span class="no-break">
     flutter_form_wizard
-      6.3.0
+      6.3.1
   </span>
 
   
