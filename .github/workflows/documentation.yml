@@ -57,8 +57,7 @@ jobs:
             fi
           fi
         done
-  
-
+      
     - name: Generate documentation for single package
       if: steps.melos-check.outputs.melos == 'false'
       run: |
@@ -76,6 +75,8 @@ jobs:
           REPO_NAME="${REPO_NAME/\//'-'}"
           mkdir -p ../docs/$REPO_NAME
           cp -r doc/api/* ../docs/$REPO_NAME/
+          # Copy GIF files if any
+          cp repository/*.gif ../docs/$REPO_NAME/ || true
         else
           echo "No documentation was generated for the repository"
         fi
