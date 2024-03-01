@@ -76,7 +76,7 @@ jobs:
           mkdir -p ../docs/$REPO_NAME
           cp -r doc/api/* ../docs/$REPO_NAME/
           # Copy GIF files if any
-          cp repository/*.gif ../docs/$REPO_NAME/ || true
+          cp repository/*.{gif,png,jpg,jpeg,bmp,tiff,svg} ../docs/$REPO_NAME/ || true
         else
           echo "No documentation was generated for the repository"
         fi
