@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -50,12 +51,12 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="flutter_login&#47;flutter_login-library-sidebar.html"
-      data-below-sidebar="flutter_login&#47;LoginOptions-class-sidebar.html">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="flutter_login&#47;flutter_login-library-sidebar.html"
+    data-below-sidebar="flutter_login&#47;LoginOptions-class-sidebar.html">
+    <div>
 <h1><span class="kind-class">LoginOptions</span> class 
  
 </h1></div>
@@ -76,7 +77,7 @@
   <dt>Annotations</dt>
   <dd>
     <ul class="annotation-list clazz-relationships">
-        <li>@<a href="https://pub.dev/documentation/meta/1.10.0/meta/immutable-constant.html">immutable</a></li>
+        <li>@<a href="https://pub.dev/documentation/meta/1.11.0/meta/immutable-constant.html">immutable</a></li>
     </ul>
   </dd>
 
@@ -90,7 +91,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="LoginOptions" class="callable">
-          <span class="name"><a href="../flutter_login/LoginOptions/LoginOptions.html">LoginOptions</a></span><span class="signature">(<span class="parameter" id="-param-image">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">image</span>, </span><span class="parameter" id="-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="-param-subtitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">subtitle</span>, </span><span class="parameter" id="-param-maxFormWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxFormWidth</span>, </span><span class="parameter" id="-param-emailTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">emailTextStyle</span>, </span><span class="parameter" id="-param-passwordTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">passwordTextStyle</span>, </span><span class="parameter" id="-param-emailDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">emailDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span><span class="parameter" id="-param-passwordDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">passwordDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span><span class="parameter" id="-param-initialEmail"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialEmail</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="-param-initialPassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialPassword</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="-param-spacers"><span class="type-annotation"><a href="../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span> <span class="parameter-name">spacers</span> = <span class="default-value">const LoginSpacerOptions()</span>, </span><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../flutter_login/LoginTranslations-class.html">LoginTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const LoginTranslations()</span>, </span><span class="parameter" id="-param-validationService"><span class="type-annotation"><a href="../flutter_login/ValidationService-class.html">ValidationService</a>?</span> <span class="parameter-name">validationService</span>, </span><span class="parameter" id="-param-loginButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">loginButtonBuilder</span> = <span class="default-value">_createLoginButton</span>, </span><span class="parameter" id="-param-forgotPasswordButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">forgotPasswordButtonBuilder</span> = <span class="default-value">_createForgotPasswordButton</span>, </span><span class="parameter" id="-param-requestForgotPasswordButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">requestForgotPasswordButtonBuilder</span> = <span class="default-value">_createRequestForgotPasswordButton</span>, </span><span class="parameter" id="-param-registrationButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">registrationButtonBuilder</span> = <span class="default-value">_createRegisterButton</span>, </span><span class="parameter" id="-param-emailInputContainerBuilder"><span class="type-annotation"><a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">emailInputContainerBuilder</span> = <span class="default-value">_createEmailInputContainer</span>, </span><span class="parameter" id="-param-passwordInputContainerBuilder"><span class="type-annotation"><a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">passwordInputContainerBuilder</span> = <span class="default-value">_createPasswordInputContainer</span>, </span><span class="parameter" id="-param-showObscurePassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showObscurePassword</span> = <span class="default-value">true</span>}</span>)</span>
+          <span class="name"><a href="../flutter_login/LoginOptions/LoginOptions.html">LoginOptions</a></span><span class="signature">(<span class="parameter" id="-param-image">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">image</span>, </span><span class="parameter" id="-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="-param-subtitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">subtitle</span>, </span><span class="parameter" id="-param-maxFormWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxFormWidth</span>, </span><span class="parameter" id="-param-emailTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">emailTextStyle</span>, </span><span class="parameter" id="-param-passwordTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">passwordTextStyle</span>, </span><span class="parameter" id="-param-emailDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">emailDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span><span class="parameter" id="-param-passwordDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">passwordDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span><span class="parameter" id="-param-initialEmail"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialEmail</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="-param-initialPassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialPassword</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="-param-spacers"><span class="type-annotation"><a href="../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span> <span class="parameter-name">spacers</span> = <span class="default-value">const LoginSpacerOptions()</span>, </span><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../flutter_login/LoginTranslations-class.html">LoginTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const LoginTranslations()</span>, </span><span class="parameter" id="-param-validationService"><span class="type-annotation"><a href="../flutter_login/ValidationService-class.html">ValidationService</a>?</span> <span class="parameter-name">validationService</span>, </span><span class="parameter" id="-param-loginButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">loginButtonBuilder</span> = <span class="default-value">_createLoginButton</span>, </span><span class="parameter" id="-param-forgotPasswordButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">forgotPasswordButtonBuilder</span> = <span class="default-value">_createForgotPasswordButton</span>, </span><span class="parameter" id="-param-requestForgotPasswordButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">requestForgotPasswordButtonBuilder</span> = <span class="default-value">_createRequestForgotPasswordButton</span>, </span><span class="parameter" id="-param-registrationButtonBuilder"><span class="type-annotation"><a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">registrationButtonBuilder</span> = <span class="default-value">_createRegisterButton</span>, </span><span class="parameter" id="-param-emailInputContainerBuilder"><span class="type-annotation"><a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">emailInputContainerBuilder</span> = <span class="default-value">_createEmailInputContainer</span>, </span><span class="parameter" id="-param-passwordInputContainerBuilder"><span class="type-annotation"><a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">passwordInputContainerBuilder</span> = <span class="default-value">_createPasswordInputContainer</span>, </span><span class="parameter" id="-param-showObscurePassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showObscurePassword</span> = <span class="default-value">true</span>, </span><span class="parameter" id="-param-forgotPasswordSpacerOptions"><span class="type-annotation"><a href="../flutter_login/ForgotPasswordSpacerOptions-class.html">ForgotPasswordSpacerOptions</a></span> <span class="parameter-name">forgotPasswordSpacerOptions</span> = <span class="default-value">const ForgotPasswordSpacerOptions()</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -105,51 +106,68 @@
       <dl class="properties">
         <dt id="emailDecoration" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/emailDecoration.html">emailDecoration</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span>
+  
 
 </dt>
 <dd>
-  
+  Decoration for the email input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="emailInputContainerBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/emailInputContainerBuilder.html">emailInputContainerBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span>
+  
 
 </dt>
 <dd>
-  
+  Builds the email input container.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="emailTextStyle" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/emailTextStyle.html">emailTextStyle</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The text style for the email input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="forgotPasswordButtonBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/forgotPasswordButtonBuilder.html">forgotPasswordButtonBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span>
+  
 
 </dt>
 <dd>
+  Builds the forgot password button.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="forgotPasswordSpacerOptions" class="property">
+  <span class="name"><a href="../flutter_login/LoginOptions/forgotPasswordSpacerOptions.html">forgotPasswordSpacerOptions</a></span>
+  <span class="signature">&#8594; <a href="../flutter_login/ForgotPasswordSpacerOptions-class.html">ForgotPasswordSpacerOptions</a></span>
   
+
+</dt>
+<dd>
+  Option to modify the spacing between the items on the forgotPasswordForm.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -160,51 +178,56 @@
 
         <dt id="image" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/image.html">image</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The image to display on the login screen.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="initialEmail" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/initialEmail.html">initialEmail</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
 
 </dt>
 <dd>
-  
+  The initial email value for the email input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="initialPassword" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/initialPassword.html">initialPassword</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
 
 </dt>
 <dd>
-  
+  The initial password value for the password input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="loginButtonBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/loginButtonBuilder.html">loginButtonBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span>
+  
 
 </dt>
 <dd>
-  
+  Builds the login button.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="maxFormWidth" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/maxFormWidth.html">maxFormWidth</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span>
+  
 
 </dt>
 <dd>
@@ -215,62 +238,68 @@
 
         <dt id="passwordDecoration" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/passwordDecoration.html">passwordDecoration</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span>
+  
 
 </dt>
 <dd>
-  
+  Decoration for the password input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="passwordInputContainerBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/passwordInputContainerBuilder.html">passwordInputContainerBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span>
+  
 
 </dt>
 <dd>
-  
+  Builds the password input container.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="passwordTextStyle" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/passwordTextStyle.html">passwordTextStyle</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The text style for the password input field.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="registrationButtonBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/registrationButtonBuilder.html">registrationButtonBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span>
+  
 
 </dt>
 <dd>
-  
+  Builds the registration button.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="requestForgotPasswordButtonBuilder" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/requestForgotPasswordButtonBuilder.html">requestForgotPasswordButtonBuilder</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span>
+  
 
 </dt>
 <dd>
-  
+  Builds the request forgot password button.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="runtimeType" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -281,18 +310,20 @@
 
         <dt id="showObscurePassword" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/showObscurePassword.html">showObscurePassword</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
 
 </dt>
 <dd>
-  
+  Determines whether the password field should be obscured.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="spacers" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/spacers.html">spacers</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span>
+  
 
 </dt>
 <dd>
@@ -304,55 +335,60 @@ and button.
 
         <dt id="subtitle" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/subtitle.html">subtitle</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The subtitle widget to display on the login screen.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="title" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/title.html">title</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The title widget to display on the login screen.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="translations" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/translations.html">translations</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/LoginTranslations-class.html">LoginTranslations</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/LoginTranslations-class.html">LoginTranslations</a></span>
+  
 
 </dt>
 <dd>
-  
+  Translations for various texts on the login screen.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="validations" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/validations.html">validations</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ValidationService-class.html">ValidationService</a></span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ValidationService-class.html">ValidationService</a></span>
+  
 
 </dt>
 <dd>
-  
+  Get validations.
   <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
         <dt id="validationService" class="property">
   <span class="name"><a href="../flutter_login/LoginOptions/validationService.html">validationService</a></span>
-  <span class="signature">&#8594; <a href="../flutter_login/ValidationService-class.html">ValidationService</a>?</span> 
+  <span class="signature">&#8594; <a href="../flutter_login/ValidationService-class.html">ValidationService</a>?</span>
+  
 
 </dt>
 <dd>
-  
+  The validation service used for validating email and password inputs.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -449,7 +485,7 @@ and button.
 <footer>
   <span class="no-break">
     flutter_login
-      5.1.4
+      5.2.0
   </span>
 
   
