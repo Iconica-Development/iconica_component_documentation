@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the InputContainerBuilder typedef from the flutter_login library, for the Dart programming language.">
-  <title>InputContainerBuilder typedef - flutter_login library - Dart API</title>
+  <meta name="description" content="API docs for the wrapWithDefaultStyle function from the flutter_login library, for the Dart programming language.">
+  <title>wrapWithDefaultStyle function - flutter_login library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">flutter_login</a></li>
     <li><a href="../flutter_login/flutter_login-library.html">flutter_login.dart</a></li>
-    <li class="self-crumb">InputContainerBuilder typedef</li>
+    <li class="self-crumb">wrapWithDefaultStyle function</li>
   </ol>
-  <div class="self-name">InputContainerBuilder</div>
+  <div class="self-name">wrapWithDefaultStyle</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -57,24 +57,34 @@
       data-above-sidebar="flutter_login&#47;flutter_login-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-typedef">InputContainerBuilder</span> typedef 
+<h1><span class="kind-function">wrapWithDefaultStyle</span> function 
  
 </h1></div>
 
     <section class="multi-line-signature">
-        <span class="name ">InputContainerBuilder</span> =
-     <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-child"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">child</span></span>)</span></span>
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span>
+<span class="name ">wrapWithDefaultStyle</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="wrapWithDefaultStyle-param-widget"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">widget</span>, </span></li>
+<li><span class="parameter" id="wrapWithDefaultStyle-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">style</span></span></li>
+</ol>)
+
+        
 
     </section>
-
     
+
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef InputContainerBuilder = Widget Function(
-  Widget child,
-);</code></pre>
+  <pre class="language-dart"><code class="language-dart">Widget? wrapWithDefaultStyle(Widget? widget, TextStyle? style) {
+  if (style == null || widget == null) {
+    return widget;
+  } else {
+    return DefaultTextStyle(style: style, child: widget);
+  }
+}</code></pre>
 </section>
 
 
@@ -91,7 +101,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">flutter_login</a></li>
     <li><a href="../flutter_login/flutter_login-library.html">flutter_login</a></li>
-    <li class="self-crumb">InputContainerBuilder typedef</li>
+    <li class="self-crumb">wrapWithDefaultStyle function</li>
 </ol>
 
 
