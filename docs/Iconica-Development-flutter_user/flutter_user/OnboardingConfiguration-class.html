@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the OnboardingConfiguration class from the flutter_user library, for the Dart programming language.">
+  <title>OnboardingConfiguration class - flutter_user library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">flutter_user</a></li>
+    <li><a href="../flutter_user/flutter_user-library.html">flutter_user.dart</a></li>
+    <li class="self-crumb">OnboardingConfiguration class</li>
+  </ol>
+  <div class="self-name">OnboardingConfiguration</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="flutter_user&#47;flutter_user-library-sidebar.html"
+    data-below-sidebar="flutter_user&#47;OnboardingConfiguration-class-sidebar.html">
+    <div>
+<h1><span class="kind-class">OnboardingConfiguration</span> class 
+ 
+</h1></div>
+
+    
+
+
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="OnboardingConfiguration" class="callable">
+          <span class="name"><a href="../flutter_user/OnboardingConfiguration/OnboardingConfiguration.html">OnboardingConfiguration</a></span><span class="signature">(<span class="parameter" id="-param-onboardingOptions">{<span class="type-annotation"><a href="../flutter_user/FlutterFormOptions-class.html">FlutterFormOptions</a>?</span> <span class="parameter-name">onboardingOptions</span>, </span><span class="parameter" id="-param-onboardingController"><span class="type-annotation"><a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a>?</span> <span class="parameter-name">onboardingController</span>, </span><span class="parameter" id="-param-onboardingFinished"><span class="type-annotation">dynamic</span> <span class="parameter-name">onboardingFinished</span>(<span class="parameter" id="param-results"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">results</span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span></span>)?, </span><span class="parameter" id="-param-onboardingOnNext"><span class="type-annotation">dynamic</span> <span class="parameter-name">onboardingOnNext</span>(<span class="parameter" id="param-pageNumber"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">pageNumber</span>, </span><span class="parameter" id="param-results"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">results</span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span></span>)?, </span><span class="parameter" id="-param-onboardingConfiguration"><span class="type-annotation"><a href="../flutter_user/OnboardingConfiguration-class.html">OnboardingConfiguration</a>?</span> <span class="parameter-name">onboardingConfiguration</span>, </span><span class="parameter" id="-param-stepperTheme"><span class="type-annotation">StepperTheme?</span> <span class="parameter-name">stepperTheme</span>, </span><span class="parameter" id="-param-imagePickerConfig"><span class="type-annotation">ImagePickerConfig?</span> <span class="parameter-name">imagePickerConfig</span>, </span><span class="parameter" id="-param-personalInputs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span> <span class="parameter-name">personalInputs</span>, </span><span class="parameter" id="-param-accessInputs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span> <span class="parameter-name">accessInputs</span>, </span><span class="parameter" id="-param-nextButton"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">nextButton</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span></span>)?, </span><span class="parameter" id="-param-backButton"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">backButton</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a></span></span>)?, </span><span class="parameter" id="-param-personalInfoTitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">personalInfoTitle</span> = <span class="default-value">&#39;Who are you?&#39;</span>, </span><span class="parameter" id="-param-personalInfoDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">personalInfoDescription</span> = <span class="default-value">&#39;Tell us something about yourself&#39;</span>, </span><span class="parameter" id="-param-personalInfoTextfieldHint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">personalInfoTextfieldHint</span> = <span class="default-value">&#39;Something about yourself...&#39;</span>, </span><span class="parameter" id="-param-photoTitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">photoTitle</span> = <span class="default-value">&#39;Upload a photo&#39;</span>, </span><span class="parameter" id="-param-photoDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">photoDescription</span> = <span class="default-value">&#39;Upload a photo of yourself&#39;</span>, </span><span class="parameter" id="-param-accessPageTitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">accessPageTitle</span> = <span class="default-value">&#39;What may others see of you?&#39;</span>, </span><span class="parameter" id="-param-accessPageDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">accessPageDescription</span> = <span class="default-value">&#39;Select what others may see of you.&#39;</span>, </span><span class="parameter" id="-param-completionTitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">completionTitle</span> = <span class="default-value">&#39;Onboarding completed!&#39;</span>, </span><span class="parameter" id="-param-completionDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">completionDescription</span> = <span class="default-value">&#39;You are now ready to begin.&#39;</span>}</span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="accessInputs" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/accessInputs.html">accessInputs</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span>
+  
+
+</dt>
+<dd>
+  Extra inputs for the access page.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="accessPageDescription" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/accessPageDescription.html">accessPageDescription</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="accessPageTitle" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/accessPageTitle.html">accessPageTitle</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="backButton" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/backButton.html">backButton</a></span>
+  <span class="signature">&#8594; (<a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a></span></span>)</span>?)</span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="completionDescription" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/completionDescription.html">completionDescription</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="completionTitle" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/completionTitle.html">completionTitle</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="imagePickerConfig" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/imagePickerConfig.html">imagePickerConfig</a></span>
+  <span class="signature">&#8594; ImagePickerConfig?</span>
+  
+
+</dt>
+<dd>
+  Configuration for the image picker.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="nextButton" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/nextButton.html">nextButton</a></span>
+  <span class="signature">&#8594; (<a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span></span>)</span>?)</span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onboardingConfiguration" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/onboardingConfiguration.html">onboardingConfiguration</a></span>
+  <span class="signature">&#8594; <a href="../flutter_user/OnboardingConfiguration-class.html">OnboardingConfiguration</a>?</span>
+  
+
+</dt>
+<dd>
+  Configuration for the onboarding screen.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onboardingController" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/onboardingController.html">onboardingController</a></span>
+  <span class="signature">&#8594; <a href="../flutter_user/FlutterFormController-class.html">FlutterFormController</a>?</span>
+  
+
+</dt>
+<dd>
+  Controller for the onboarding screen.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onboardingFinished" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/onboardingFinished.html">onboardingFinished</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-results"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">results</span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span></span>)</span>?)</span>
+  
+
+</dt>
+<dd>
+  Called when the user finishes the onboarding.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onboardingOnNext" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/onboardingOnNext.html">onboardingOnNext</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-pageNumber"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">pageNumber</span>, </span><span class="parameter" id="param-results"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">results</span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span></span>)</span>?)</span>
+  
+
+</dt>
+<dd>
+  Called when the user goes to the next page in the onboarding.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onboardingOptions" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/onboardingOptions.html">onboardingOptions</a></span>
+  <span class="signature">&#8594; <a href="../flutter_user/FlutterFormOptions-class.html">FlutterFormOptions</a>?</span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="personalInfoDescription" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/personalInfoDescription.html">personalInfoDescription</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="personalInfoTextfieldHint" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/personalInfoTextfieldHint.html">personalInfoTextfieldHint</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="personalInfoTitle" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/personalInfoTitle.html">personalInfoTitle</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="personalInputs" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/personalInputs.html">personalInputs</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span>
+  
+
+</dt>
+<dd>
+  Extra inputs for the personal info page.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="photoDescription" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/photoDescription.html">photoDescription</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="photoTitle" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/photoTitle.html">photoTitle</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="stepperTheme" class="property">
+  <span class="name"><a href="../flutter_user/OnboardingConfiguration/stepperTheme.html">stepperTheme</a></span>
+  <span class="signature">&#8594; StepperTheme?</span>
+  
+
+</dt>
+<dd>
+  Theme for the onboarding screen.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">flutter_user</a></li>
+    <li><a href="../flutter_user/flutter_user-library.html">flutter_user</a></li>
+    <li class="self-crumb">OnboardingConfiguration class</li>
+</ol>
+
+
+    <h5>flutter_user library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    flutter_user
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
