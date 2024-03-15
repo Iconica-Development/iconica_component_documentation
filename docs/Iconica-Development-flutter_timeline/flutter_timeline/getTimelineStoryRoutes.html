@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.0/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.1/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getTimelineStoryRoutes</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getTimelineStoryRoutes-param-configuration">{<span class="type-annotation"><a href="../flutter_timeline/TimelineUserStoryConfiguration-class.html">TimelineUserStoryConfiguration</a>?</span> <span class="parameter-name">configuration</span>}</span></li>
 </ol>)
 
@@ -113,15 +113,22 @@ If no configuration is provided, default values will be used.</p>
           postWidgetBuilder: config.postWidgetBuilder,
         );
 
+        var button = FloatingActionButton(
+          onPressed: () async =&gt; context.go(
+            TimelineUserStoryRoutes.timelinePostCreation,
+          ),
+          child: const Icon(Icons.add),
+        );
+
         return buildScreenWithoutTransition(
           context: context,
           state: state,
-          child: config.openPageBuilder?.call(
-                context,
-                timelineScreen,
-              ) ??
+          child: config.homeOpenPageBuilder
+                  ?.call(context, timelineScreen, button) ??
               Scaffold(
+                appBar: AppBar(),
                 body: timelineScreen,
+                floatingActionButton: button,
               ),
         );
       },
@@ -141,16 +148,97 @@ If no configuration is provided, default values will be used.</p>
           onUserTap: (user) =&gt; config.onUserTap?.call(context, user),
         );
 
+        var backButton = IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () =&gt; context.go(TimelineUserStoryRoutes.timelineHome),
+        );
+
         return buildScreenWithoutTransition(
           context: context,
           state: state,
-          child: config.openPageBuilder?.call(
-                context,
-                timelinePostWidget,
-              ) ??
+          child: config.postViewOpenPageBuilder
+                  ?.call(context, timelinePostWidget, backButton) ??
               Scaffold(
+                appBar: AppBar(
+                  leading: backButton,
+                ),
                 body: timelinePostWidget,
               ),
+        );
+      },
+    ),
+    GoRoute(
+      path: TimelineUserStoryRoutes.timelinePostCreation,
+      pageBuilder: (context, state) {
+        var timelinePostCreationWidget = TimelinePostCreationScreen(
+          userId: config.userId,
+          options: config.optionsBuilder(context),
+          service: config.service,
+          onPostCreated: (post) async {
+            var newPost = await config.service.postService.createPost(post);
+            if (context.mounted) {
+              if (config.afterPostCreationGoHome) {
+                context.go(TimelineUserStoryRoutes.timelineHome);
+              } else {
+                await context
+                    .push(TimelineUserStoryRoutes.timelineViewPath(newPost.id));
+              }
+            }
+          },
+          onPostOverview: (post) async =&gt; context.push(
+            TimelineUserStoryRoutes.timelinePostOverview,
+            extra: post,
+          ),
+          enablePostOverviewScreen: config.enablePostOverviewScreen,
+        );
+
+        var backButton = IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () =&gt; context.go(TimelineUserStoryRoutes.timelineHome),
+        );
+
+        return buildScreenWithoutTransition(
+          context: context,
+          state: state,
+          child: config.postCreationOpenPageBuilder
+                  ?.call(context, timelinePostCreationWidget, backButton) ??
+              Scaffold(
+                appBar: AppBar(
+                  title: Text(
+                    config.optionsBuilder(context).translations.postCreation,
+                  ),
+                  leading: backButton,
+                ),
+                body: timelinePostCreationWidget,
+              ),
+        );
+      },
+    ),
+    GoRoute(
+      path: TimelineUserStoryRoutes.timelinePostOverview,
+      pageBuilder: (context, state) {
+        var post = state.extra! as TimelinePost;
+
+        var timelinePostOverviewWidget = TimelinePostOverviewScreen(
+          options: config.optionsBuilder(context),
+          service: config.service,
+          timelinePost: post,
+          onPostSubmit: (post) async {
+            await config.service.postService.createPost(post);
+            if (context.mounted) {
+              context.go(TimelineUserStoryRoutes.timelineHome);
+            }
+          },
+        );
+
+        return buildScreenWithoutTransition(
+          context: context,
+          state: state,
+          child: config.postOverviewOpenPageBuilder?.call(
+                context,
+                timelinePostOverviewWidget,
+              ) ??
+              timelinePostOverviewWidget,
         );
       },
     ),
@@ -188,7 +276,7 @@ If no configuration is provided, default values will be used.</p>
 <footer>
   <span class="no-break">
     flutter_timeline
-      2.1.0
+      2.3.0
   </span>
 
   
