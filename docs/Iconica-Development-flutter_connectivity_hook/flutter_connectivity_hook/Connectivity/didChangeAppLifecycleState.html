@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the onConnectionLost method from the DefaultFlutterHandler class, for the Dart programming language.">
-  <title>onConnectionLost method - DefaultFlutterHandler class - flutter_connectivity_hook library - Dart API</title>
+  <meta name="description" content="API docs for the didChangeAppLifecycleState method from the Connectivity class, for the Dart programming language.">
+  <title>didChangeAppLifecycleState method - Connectivity class - flutter_connectivity_hook library - Dart API</title>
 
 
   
@@ -31,10 +31,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">flutter_connectivity_hook</a></li>
     <li><a href="../../flutter_connectivity_hook/flutter_connectivity_hook-library.html">flutter_connectivity_hook.dart</a></li>
-    <li><a href="../../flutter_connectivity_hook/DefaultFlutterHandler-class.html">DefaultFlutterHandler</a></li>
-    <li class="self-crumb">onConnectionLost method</li>
+    <li><a href="../../flutter_connectivity_hook/Connectivity-class.html">Connectivity</a></li>
+    <li class="self-crumb">didChangeAppLifecycleState method</li>
   </ol>
-  <div class="self-name">onConnectionLost</div>
+  <div class="self-name">didChangeAppLifecycleState</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -55,10 +55,10 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="flutter_connectivity_hook&#47;DefaultFlutterHandler-class-sidebar.html"
+    data-above-sidebar="flutter_connectivity_hook&#47;Connectivity-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">onConnectionLost</span> method 
+<h1><span class="kind-method">didChangeAppLifecycleState</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
@@ -70,68 +70,37 @@
   </div>
 
 <span class="returntype">void</span>
-<span class="name ">onConnectionLost</span>(<wbr>)
+<span class="name ">didChangeAppLifecycleState</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="didChangeAppLifecycleState-param-state"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/AppLifecycleState.html">AppLifecycleState</a></span> <span class="parameter-name">state</span></span></li>
+</ol>)
 
       <div class="features"><span class="feature">override</span></div>
 
     </section>
     
+<section class="desc markdown">
+  <p>Called when the system puts the app in the background or returns
+the app to the foreground.</p>
+<p>An example of implementing this method is provided in the class-level
+documentation for the <a href="https://api.flutter.dev/flutter/widgets/WidgetsBindingObserver-class.html">WidgetsBindingObserver</a> class.</p>
+<p>This method exposes notifications from <a href="https://api.flutter.dev/flutter/services/SystemChannels/lifecycle-constant.html">SystemChannels.lifecycle</a>.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/AppLifecycleListener-class.html">AppLifecycleListener</a>, an alternative API for responding to
+application lifecycle changes.</li>
+</ul>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void onConnectionLost() {
-  var theme = Theme.of(context);
-  if (!hasPushed) {
-    if (connectivityDisplayType == ConnectivityDisplayType.screen) {
-      unawaited(
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =&gt; PopScope(
-              canPop: false,
-              child: screen,
-            ),
-          ),
-        ),
-      );
-      hasPushed = true;
-      return;
-    }
-
-    if (connectivityDisplayType == ConnectivityDisplayType.snackBar) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: theme.snackBarTheme.backgroundColor,
-          content: screen,
-          duration: const Duration(
-            days: 1,
-          ),
-        ),
-      );
-      hasPushed = true;
-      return;
-    }
-
-    if (connectivityDisplayType == ConnectivityDisplayType.popUp ||
-        connectivityDisplayType == ConnectivityDisplayType.popUpDismissible) {
-      var isDismissible =
-          connectivityDisplayType != ConnectivityDisplayType.popUp;
-      unawaited(
-        showDialog(
-          barrierDismissible: isDismissible,
-          context: context,
-          builder: (context) =&gt; PopScope(
-            canPop: isDismissible,
-            child: screen,
-          ),
-        ),
-      );
-
-      hasPushed = true;
-      return;
-    }
+void didChangeAppLifecycleState(AppLifecycleState state) {
+  if (state == AppLifecycleState.resumed) {
+    _timer?.cancel();
+    start();
+  } else {
+    _timer?.cancel();
   }
 }</code></pre>
 </section>
@@ -150,12 +119,12 @@ void onConnectionLost() {
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">flutter_connectivity_hook</a></li>
     <li><a href="../../flutter_connectivity_hook/flutter_connectivity_hook-library.html">flutter_connectivity_hook</a></li>
-    <li><a href="../../flutter_connectivity_hook/DefaultFlutterHandler-class.html">DefaultFlutterHandler</a></li>
-    <li class="self-crumb">onConnectionLost method</li>
+    <li><a href="../../flutter_connectivity_hook/Connectivity-class.html">Connectivity</a></li>
+    <li class="self-crumb">didChangeAppLifecycleState method</li>
 </ol>
 
 
-    <h5>DefaultFlutterHandler class</h5>
+    <h5>Connectivity class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 

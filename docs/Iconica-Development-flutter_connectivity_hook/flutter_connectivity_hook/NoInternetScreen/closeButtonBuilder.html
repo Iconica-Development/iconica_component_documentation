@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the onConnectionLost method from the DefaultFlutterHandler class, for the Dart programming language.">
-  <title>onConnectionLost method - DefaultFlutterHandler class - flutter_connectivity_hook library - Dart API</title>
+  <meta name="description" content="API docs for the closeButtonBuilder property from the NoInternetScreen class, for the Dart programming language.">
+  <title>closeButtonBuilder property - NoInternetScreen class - flutter_connectivity_hook library - Dart API</title>
 
 
   
@@ -31,10 +31,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">flutter_connectivity_hook</a></li>
     <li><a href="../../flutter_connectivity_hook/flutter_connectivity_hook-library.html">flutter_connectivity_hook.dart</a></li>
-    <li><a href="../../flutter_connectivity_hook/DefaultFlutterHandler-class.html">DefaultFlutterHandler</a></li>
-    <li class="self-crumb">onConnectionLost method</li>
+    <li><a href="../../flutter_connectivity_hook/NoInternetScreen-class.html">NoInternetScreen</a></li>
+    <li class="self-crumb">closeButtonBuilder property</li>
   </ol>
-  <div class="self-name">onConnectionLost</div>
+  <div class="self-name">closeButtonBuilder</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -55,92 +55,35 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="flutter_connectivity_hook&#47;DefaultFlutterHandler-class-sidebar.html"
+    data-above-sidebar="flutter_connectivity_hook&#47;NoInternetScreen-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">onConnectionLost</span> method 
+<h1><span class="kind-property">closeButtonBuilder</span> property 
 </h1></div>
 
-    <section class="multi-line-signature">
+      <section class="multi-line-signature">
+        
+        <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?
+        <span class="name ">closeButtonBuilder</span>
+        <div class="features"><span class="feature">final</span></div>
+
+      </section>
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
+<section class="desc markdown">
+  <p>Builder for close button. Can be used in case of dismissible pop up.</p>
+</section>
 
-<span class="returntype">void</span>
-<span class="name ">onConnectionLost</span>(<wbr>)
-
-      <div class="features"><span class="feature">override</span></div>
-
-    </section>
-    
-
-
-    
+      
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-void onConnectionLost() {
-  var theme = Theme.of(context);
-  if (!hasPushed) {
-    if (connectivityDisplayType == ConnectivityDisplayType.screen) {
-      unawaited(
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =&gt; PopScope(
-              canPop: false,
-              child: screen,
-            ),
-          ),
-        ),
-      );
-      hasPushed = true;
-      return;
-    }
-
-    if (connectivityDisplayType == ConnectivityDisplayType.snackBar) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: theme.snackBarTheme.backgroundColor,
-          content: screen,
-          duration: const Duration(
-            days: 1,
-          ),
-        ),
-      );
-      hasPushed = true;
-      return;
-    }
-
-    if (connectivityDisplayType == ConnectivityDisplayType.popUp ||
-        connectivityDisplayType == ConnectivityDisplayType.popUpDismissible) {
-      var isDismissible =
-          connectivityDisplayType != ConnectivityDisplayType.popUp;
-      unawaited(
-        showDialog(
-          barrierDismissible: isDismissible,
-          context: context,
-          builder: (context) =&gt; PopScope(
-            canPop: isDismissible,
-            child: screen,
-          ),
-        ),
-      );
-
-      hasPushed = true;
-      return;
-    }
-  }
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">final Widget? closeButtonBuilder;</code></pre>
 </section>
 
 
-  </div> <!-- /.main-content -->
+</div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -150,16 +93,16 @@ void onConnectionLost() {
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">flutter_connectivity_hook</a></li>
     <li><a href="../../flutter_connectivity_hook/flutter_connectivity_hook-library.html">flutter_connectivity_hook</a></li>
-    <li><a href="../../flutter_connectivity_hook/DefaultFlutterHandler-class.html">DefaultFlutterHandler</a></li>
-    <li class="self-crumb">onConnectionLost method</li>
+    <li><a href="../../flutter_connectivity_hook/NoInternetScreen-class.html">NoInternetScreen</a></li>
+    <li class="self-crumb">closeButtonBuilder property</li>
 </ol>
 
 
-    <h5>DefaultFlutterHandler class</h5>
-    <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-->
+  <h5>NoInternetScreen class</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div><!--/.sidebar-offcanvas-->
 
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
 
 </main>
