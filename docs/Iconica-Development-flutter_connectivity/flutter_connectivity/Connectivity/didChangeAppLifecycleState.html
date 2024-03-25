@@ -97,10 +97,11 @@ application lifecycle changes.</li>
   <pre class="language-dart"><code class="language-dart">@override
 void didChangeAppLifecycleState(AppLifecycleState state) {
   if (state == AppLifecycleState.resumed) {
-    _timer?.cancel();
-    start();
+    if (_timer != null) {
+      _timer!.start();
+    }
   } else {
-    _timer?.cancel();
+    _timer?.pause();
   }
 }</code></pre>
 </section>
@@ -136,7 +137,7 @@ void didChangeAppLifecycleState(AppLifecycleState state) {
 <footer>
   <span class="no-break">
     flutter_connectivity
-      0.2.6
+      0.2.7
   </span>
 
   

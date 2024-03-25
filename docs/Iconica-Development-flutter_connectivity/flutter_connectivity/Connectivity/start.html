@@ -95,7 +95,7 @@ internet connection.
   Widget? fallBackScreen,
   ConnectivityDisplayType? connectivityDisplayType,
 }) {
-  _timer ??= Timer.periodic(_config.duration, (t) async {
+  _timer ??= PausableTimer.periodic(_config.duration, () async {
     _previousConnection = _connection;
 
     if (kIsWeb &amp;&amp; _config.webUrl == null) {
@@ -128,7 +128,8 @@ internet connection.
     } else if (!_previousConnection &amp;&amp; _connection) {
       _config.handler.onConnectionRestored();
     }
-  });
+  })
+    ..start();
 }</code></pre>
 </section>
 
@@ -163,7 +164,7 @@ internet connection.
 <footer>
   <span class="no-break">
     flutter_connectivity
-      0.2.6
+      0.2.7
   </span>
 
   
