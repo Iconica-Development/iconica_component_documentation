@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -51,12 +52,12 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="flutter_chat&#47;LocalChatDetailService-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="flutter_chat&#47;LocalChatDetailService-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
 <h1><span class="kind-method">getMessagesStream</span> method 
 </h1></div>
 
@@ -76,13 +77,18 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Retrieves a stream of messages for the specified chat.</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Stream&lt;List&lt;ChatMessageModel&gt;&gt; getMessagesStream(String chatId) {
+Stream&lt;List&lt;ChatMessageModel&gt;&gt; getMessagesStream(
+  String chatId,
+) {
   _controller.onListen = () async {
     _subscription =
         chatOverviewService.getChatById(chatId).asStream().listen((event) {
@@ -120,14 +126,14 @@ Stream&lt;List&lt;ChatMessageModel&gt;&gt; getMessagesStream(String chatId) {
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+</div><!--/.sidebar-offcanvas-->
 
 </main>
 
 <footer>
   <span class="no-break">
     flutter_chat
-      1.2.1
+      1.4.0
   </span>
 
   

@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -51,12 +52,12 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="service_firebase_chat_overview_service&#47;FirebaseChatOverviewService-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="service_firebase_chat_overview_service&#47;FirebaseChatOverviewService-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
 <h1><span class="kind-method">readChat</span> method 
 </h1></div>
 
@@ -76,6 +77,10 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Marks a chat as read.</p>
+<p><code>chat</code>: The chat to be marked as read.</p>
+</section>
 
 
     
@@ -89,6 +94,7 @@ Future&lt;void&gt; readChat(ChatModel chat) async {
     return;
   }
   &#47;&#47; set the amount of unread messages to 0
+
   await _db
       .collection(_options.usersCollectionName)
       .doc(currentUser!.id)
@@ -122,14 +128,14 @@ Future&lt;void&gt; readChat(ChatModel chat) async {
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+</div><!--/.sidebar-offcanvas-->
 
 </main>
 
 <footer>
   <span class="no-break">
     flutter_chat_firebase
-      1.2.1
+      1.4.0
   </span>
 
   

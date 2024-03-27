@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -50,17 +51,20 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="service_firebase_chat_overview_service&#47;service_firebase_chat_overview_service-library-sidebar.html"
-      data-below-sidebar="service_firebase_chat_overview_service&#47;FirebaseChatOverviewService-class-sidebar.html">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="service_firebase_chat_overview_service&#47;service_firebase_chat_overview_service-library-sidebar.html"
+    data-below-sidebar="service_firebase_chat_overview_service&#47;FirebaseChatOverviewService-class-sidebar.html">
+    <div>
 <h1><span class="kind-class">FirebaseChatOverviewService</span> class 
  
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>Service class for managing chat overviews using Firebase.</p>
+</section>
 
 
 
@@ -70,10 +74,10 @@
 
     <dl class="constructor-summary-list">
         <dt id="FirebaseChatOverviewService" class="callable">
-          <span class="name"><a href="../service_firebase_chat_overview_service/FirebaseChatOverviewService/FirebaseChatOverviewService.html">FirebaseChatOverviewService</a></span><span class="signature">(<span class="parameter" id="-param-userService">{<span>required</span> <span class="type-annotation">ChatUserService</span> <span class="parameter-name">userService</span>, </span><span class="parameter" id="-param-app"><span class="type-annotation"><a href="https://pub.dev/documentation/firebase_core/2.25.4/firebase_core/FirebaseApp-class.html">FirebaseApp</a>?</span> <span class="parameter-name">app</span>, </span><span class="parameter" id="-param-options"><span class="type-annotation"><a href="../config_firebase_chat_options/FirebaseChatOptions-class.html">FirebaseChatOptions</a>?</span> <span class="parameter-name">options</span>}</span>)</span>
+          <span class="name"><a href="../service_firebase_chat_overview_service/FirebaseChatOverviewService/FirebaseChatOverviewService.html">FirebaseChatOverviewService</a></span><span class="signature">(<span class="parameter" id="-param-userService">{<span>required</span> <span class="type-annotation">ChatUserService</span> <span class="parameter-name">userService</span>, </span><span class="parameter" id="-param-app"><span class="type-annotation"><a href="https://pub.dev/documentation/firebase_core/2.27.2/firebase_core/FirebaseApp-class.html">FirebaseApp</a>?</span> <span class="parameter-name">app</span>, </span><span class="parameter" id="-param-options"><span class="type-annotation"><a href="../config_firebase_chat_options/FirebaseChatOptions-class.html">FirebaseChatOptions</a>?</span> <span class="parameter-name">options</span>}</span>)</span>
         </dt>
         <dd>
-          
+          Constructor for FirebaseChatOverviewService.
         </dd>
     </dl>
   </section>
@@ -84,7 +88,8 @@
       <dl class="properties">
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -95,7 +100,8 @@
 
         <dt id="runtimeType" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -121,7 +127,7 @@
 
 </dt>
 <dd>
-  
+  Deletes the given chat.
   
 
 </dd>
@@ -134,7 +140,7 @@
 
 </dt>
 <dd>
-  
+  Retrieves a chat by the given ID.
   
 
 </dd>
@@ -147,7 +153,7 @@
 
 </dt>
 <dd>
-  
+  Retrieves a chat by the given user.
   
 
 </dd>
@@ -160,7 +166,7 @@
 
 </dt>
 <dd>
-  
+  Retrieves a stream of chat overviews.
   
 
 </dd>
@@ -173,7 +179,7 @@
 
 </dt>
 <dd>
-  
+  Retrieves a stream of the count of unread chats.
   
 
 </dd>
@@ -199,7 +205,7 @@
 
 </dt>
 <dd>
-  
+  Marks a chat as read.
   
 
 </dd>
@@ -212,7 +218,7 @@
 
 </dt>
 <dd>
-  
+  Stores the given chat if it does not exist already.
   
 
 </dd>
@@ -287,7 +293,7 @@
 <footer>
   <span class="no-break">
     flutter_chat_firebase
-      1.2.1
+      1.4.0
   </span>
 
   

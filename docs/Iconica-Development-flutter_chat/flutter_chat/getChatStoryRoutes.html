@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -63,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.0/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.1/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getChatStoryRoutes</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getChatStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_chat/ChatUserStoryConfiguration-class.html">ChatUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
@@ -84,6 +85,7 @@
         path: ChatUserStoryRoutes.chatScreen,
         pageBuilder: (context, state) {
           var chatScreen = ChatScreen(
+            unreadMessageTextStyle: configuration.unreadMessageTextStyle,
             service: configuration.chatService,
             options: configuration.chatOptionsBuilder(context),
             onNoChats: () async =&gt;
@@ -122,11 +124,24 @@
         pageBuilder: (context, state) {
           var chatId = state.pathParameters[&#39;id&#39;];
           var chatDetailScreen = ChatDetailScreen(
+            chatTitleBuilder: configuration.chatTitleBuilder,
+            usernameBuilder: configuration.usernameBuilder,
+            loadingWidgetBuilder: configuration.loadingWidgetBuilder,
+            iconDisabledColor: configuration.iconDisabledColor,
             pageSize: configuration.messagePageSize,
             options: configuration.chatOptionsBuilder(context),
             translations: configuration.translations,
             service: configuration.chatService,
             chatId: chatId!,
+            textfieldBottomPadding: configuration.textfieldBottomPadding ?? 0,
+            onPressUserProfile: (userId) async {
+              if (configuration.onPressUserProfile != null) {
+                return configuration.onPressUserProfile?.call();
+              }
+              return context.push(
+                ChatUserStoryRoutes.chatProfileScreenPath(chatId, userId),
+              );
+            },
             onMessageSubmit: (message) async {
               if (configuration.onMessageSubmit != null) {
                 await configuration.onMessageSubmit?.call(message);
@@ -198,6 +213,33 @@
                 );
               }
             },
+            onPressCreateGroupChat: () async =&gt; context.push(
+              ChatUserStoryRoutes.newGroupChatScreen,
+            ),
+          );
+          return buildScreenWithoutTransition(
+            context: context,
+            state: state,
+            child: configuration.chatPageBuilder?.call(
+                  context,
+                  newChatScreen,
+                ) ??
+                Scaffold(
+                  body: newChatScreen,
+                ),
+          );
+        },
+      ),
+      GoRoute(
+        path: ChatUserStoryRoutes.newGroupChatScreen,
+        pageBuilder: (context, state) {
+          var newChatScreen = NewGroupChatScreen(
+            options: configuration.chatOptionsBuilder(context),
+            translations: configuration.translations,
+            service: configuration.chatService,
+            onPressGroupChatOverview: (user) async =&gt; context.push(
+              ChatUserStoryRoutes.newGroupChatOverviewScreen,
+            ),
           );
           return buildScreenWithoutTransition(
             context: context,
@@ -279,7 +321,7 @@
 <footer>
   <span class="no-break">
     flutter_chat
-      1.2.1
+      1.4.0
   </span>
 
   

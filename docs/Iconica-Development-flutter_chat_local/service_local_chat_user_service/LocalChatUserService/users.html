@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -51,25 +52,28 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="service_local_chat_user_service&#47;LocalChatUserService-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="service_local_chat_user_service&#47;LocalChatUserService-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
 <h1><span class="kind-property">users</span> property 
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-          <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">ChatUserModel</span>&gt;</span>
-          <span class="name ">users</span>
-          <div class="features"><span class="feature">getter/setter pair</span></div>
-
-        </section>
+      <section class="multi-line-signature">
         
+        <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">ChatUserModel</span>&gt;</span>
+        <span class="name ">users</span>
+        <div class="features"><span class="feature">getter/setter pair</span></div>
 
-        
+      </section>
+      
+<section class="desc markdown">
+  <p>List of predefined chat users.</p>
+</section>
+
+      
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">List&lt;ChatUserModel&gt; users = [
@@ -85,14 +89,20 @@
     lastName: &#39;Doe&#39;,
     imageUrl: &#39;https:&#47;&#47;picsum.photos&#47;200&#47;300&#39;,
   ),
+  ChatUserModel(
+    id: &#39;3&#39;,
+    firstName: &#39;ico&#39;,
+    lastName: &#39;nica&#39;,
+    imageUrl: &#39;https:&#47;&#47;picsum.photos&#47;100&#47;200&#39;,
+  ),
 ];</code></pre>
 </section>
 
 
-  </div> <!-- /.main-content -->
+</div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -107,19 +117,19 @@
 </ol>
 
 
-    <h5>LocalChatUserService class</h5>
-    <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-->
+  <h5>LocalChatUserService class</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div><!--/.sidebar-offcanvas-->
 
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
 
 </main>
 
 <footer>
   <span class="no-break">
     flutter_chat_local
-      1.2.1
+      1.4.0
   </span>
 
   

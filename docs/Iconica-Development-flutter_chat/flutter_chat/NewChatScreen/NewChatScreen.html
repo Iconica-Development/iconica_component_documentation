@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -67,6 +68,8 @@
 </ol>
 ), </span></li>
 <li><span class="parameter" id="-param-service"><span>required</span> <span class="type-annotation"><a href="../../flutter_chat/ChatService-class.html">ChatService</a></span> <span class="parameter-name">service</span>, </span></li>
+<li><span class="parameter" id="-param-onPressCreateGroupChat"><span>required</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">onPressCreateGroupChat</span>(<ol class="parameter-list"></ol>
+), </span></li>
 <li><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../../flutter_chat/ChatTranslations-class.html">ChatTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const ChatTranslations()</span>, </span></li>
 <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
 </ol>)
@@ -82,6 +85,7 @@
   required this.options,
   required this.onPressCreateChat,
   required this.service,
+  required this.onPressCreateGroupChat,
   this.translations = const ChatTranslations(),
   super.key,
 });</code></pre>
@@ -118,7 +122,7 @@
 <footer>
   <span class="no-break">
     flutter_chat
-      1.2.1
+      1.4.0
   </span>
 
   

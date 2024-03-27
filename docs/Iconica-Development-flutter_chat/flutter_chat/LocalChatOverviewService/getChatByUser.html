@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -51,12 +52,12 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="flutter_chat&#47;LocalChatOverviewService-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="flutter_chat&#47;LocalChatOverviewService-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
 <h1><span class="kind-method">getChatByUser</span> method 
 </h1></div>
 
@@ -68,7 +69,7 @@
     </ol>
   </div>
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../flutter_chat/ChatModel-class.html">ChatModel</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../flutter_chat/PersonalChatModel-class.html">PersonalChatModel</a></span>&gt;</span></span>
 <span class="name ">getChatByUser</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getChatByUser-param-user"><span class="type-annotation"><a href="../../flutter_chat/ChatUserModel-class.html">ChatUserModel</a></span> <span class="parameter-name">user</span></span></li>
 </ol>)
 
@@ -82,16 +83,14 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;ChatModel&gt; getChatByUser(ChatUserModel user) {
+Future&lt;PersonalChatModel&gt; getChatByUser(ChatUserModel user) async {
   PersonalChatModel? chat;
   try {
-    chat = _chats.firstWhere(
-      (element) =&gt; element.user.id == user.id,
-      orElse: () {
-        throw Exception();
-      },
-    );
-  } on Exception catch (_) {
+    chat = _chats
+        .whereType&lt;PersonalChatModel&gt;()
+        .firstWhere((element) =&gt; element.user.id == user.id);
+    &#47;&#47; ignore: avoid_catching_errors
+  } on StateError {
     chat = PersonalChatModel(
       user: user,
       messages: [],
@@ -99,11 +98,12 @@ Future&lt;ChatModel&gt; getChatByUser(ChatUserModel user) {
     );
     chat.id = chat.hashCode.toString();
     _chats.add(chat);
+    debugPrint(&#39;New chat created: $chat&#39;);
   }
 
   _chatsController.add([..._chats]);
   notifyListeners();
-  return Future.value(chat);
+  return chat;
 }</code></pre>
 </section>
 
@@ -131,14 +131,14 @@ Future&lt;ChatModel&gt; getChatByUser(ChatUserModel user) {
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+</div><!--/.sidebar-offcanvas-->
 
 </main>
 
 <footer>
   <span class="no-break">
     flutter_chat
-      1.2.1
+      1.4.0
   </span>
 
   

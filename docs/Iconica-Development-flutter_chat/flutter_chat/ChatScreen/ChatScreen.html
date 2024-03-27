@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -72,6 +73,7 @@
 </ol>
 ), </span></li>
 <li><span class="parameter" id="-param-service"><span>required</span> <span class="type-annotation"><a href="../../flutter_chat/ChatService-class.html">ChatService</a></span> <span class="parameter-name">service</span>, </span></li>
+<li><span class="parameter" id="-param-unreadMessageTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">unreadMessageTextStyle</span>, </span></li>
 <li><span class="parameter" id="-param-onNoChats"><span class="type-annotation">dynamic</span> <span class="parameter-name">onNoChats</span>(<ol class="parameter-list"></ol>
 )?, </span></li>
 <li><span class="parameter" id="-param-deleteChatDialog"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span>&gt;</span></span> <span class="parameter-name">deleteChatDialog</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span>, </span></li>
@@ -96,6 +98,7 @@
   required this.onPressChat,
   required this.onDeleteChat,
   required this.service,
+  this.unreadMessageTextStyle,
   this.onNoChats,
   this.deleteChatDialog,
   this.translations = const ChatTranslations(),
@@ -135,7 +138,7 @@
 <footer>
   <span class="no-break">
     flutter_chat
-      1.2.1
+      1.4.0
   </span>
 
   
