@@ -64,30 +64,53 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">startNavigatorUserStory</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="startNavigatorUserStory-param-configuration"><span class="type-annotation"><a href="../flutter_start/StartUserStoryConfiguration-class.html">StartUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span>, </span></li>
-<li><span class="parameter" id="startNavigatorUserStory-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
-</ol>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">startNavigatorUserStory</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="startNavigatorUserStory-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="startNavigatorUserStory-param-configuration"><span class="type-annotation"><a href="../flutter_start/StartUserStoryConfiguration-class.html">StartUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span>, {</span></li>
+<li><span class="parameter" id="startNavigatorUserStory-param-onComplete"><span>required</span> <span class="type-annotation">void</span> <span class="parameter-name">onComplete</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>), </span></li>
+</ol>})
 
         
 
     </section>
     
+<section class="desc markdown">
+  <p>Enter the start user story with the Navigator 1.0 API.</p>
+<p>Requires a Navigator widget to exist in the given <code>context</code>.</p>
+<p>Customization can be done through the <code>configuration</code> parameter.</p>
+<p><code>onComplete</code> triggers as soon as the userstory is finished.</p>
+<p>The context provided here is a context has a guaranteed navigator.</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Widget startNavigatorUserStory(
-  StartUserStoryConfiguration configuration,
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; startNavigatorUserStory(
   BuildContext context,
-) {
-  if (configuration.splashScreenBuilder == null &amp;&amp;
-      configuration.splashScreenCenterWidget == null &amp;&amp;
-      configuration.splashScreenBackgroundColor == null) {
-    return _introduction(configuration, context);
+  StartUserStoryConfiguration configuration, {
+  required void Function(BuildContext context) onComplete,
+}) async {
+  var initialRoute = MaterialPageRoute(
+    builder: (context) =&gt; _splashScreen(
+      configuration,
+      context,
+      onComplete,
+    ),
+  );
+
+  if (configuration.startWithIntroScreen) {
+    initialRoute = MaterialPageRoute(
+      builder: (context) =&gt; _introduction(
+        configuration,
+        context,
+        onComplete,
+      ),
+    );
   }
-  return _splashScreen(configuration, context);
+
+  await Navigator.of(context).push(initialRoute);
 }</code></pre>
 </section>
 
@@ -121,7 +144,7 @@
 <footer>
   <span class="no-break">
     flutter_start
-      2.0.5
+      3.0.0
   </span>
 
   
