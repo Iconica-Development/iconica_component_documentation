@@ -64,8 +64,8 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.0/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
-<span class="name ">getAuthStoryRoutes</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getAuthStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_user/AuthUserStoryConfiguration-class.html">AuthUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.2/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="name ">getAuthStoryRoutes</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getAuthStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_user/AuthUserStoryConfiguration-class.html">AuthUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
         
@@ -200,7 +200,7 @@
                       }
                     : null,
                 options: configuration.loginOptionsBuilder?.call(context) ??
-                    const LoginOptions(),
+                    LoginOptions.defaults(),
               ),
               configuration.pageOverlayBuilder?.call(context) ??
                   const SizedBox.shrink(),
@@ -264,7 +264,7 @@
             children: [
               ForgotPasswordForm(
                 options: configuration.loginOptionsBuilder?.call(context) ??
-                    const LoginOptions(),
+                    LoginOptions.defaults(),
                 description:
                     configuration.forgotPasswordDescription?.call(context) ??
                         const SizedBox.shrink(),
@@ -419,7 +419,7 @@
 <footer>
   <span class="no-break">
     flutter_user
-      1.0.0
+      2.0.0
   </span>
 
   

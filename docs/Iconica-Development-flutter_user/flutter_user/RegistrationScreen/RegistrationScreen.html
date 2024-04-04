@@ -63,12 +63,16 @@
 
     <section class="multi-line-signature">
       const
-      <span class="name ">RegistrationScreen</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-registrationOptions">{<span>required</span> <span class="type-annotation"><a href="../../flutter_user/RegistrationOptions-class.html">RegistrationOptions</a></span> <span class="parameter-name">registrationOptions</span>, </span></li>
-<li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
-</ol>)
+      <span class="name ">RegistrationScreen</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-registrationOptions"><span>required</span> <span class="type-annotation"><a href="../../flutter_user/RegistrationOptions-class.html">RegistrationOptions</a></span> <span class="parameter-name">registrationOptions</span>, </span></li>
+<li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+</ol>})
     </section>
 
     
+<section class="desc markdown">
+  <p>Constructs a <a href="../../flutter_user/RegistrationScreen-class.html">RegistrationScreen</a> object.</p>
+<p><a href="../../flutter_user/RegistrationScreen/registrationOptions.html">registrationOptions</a> specifies the registration options.</p>
+</section>
 
 
     
@@ -76,8 +80,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">const RegistrationScreen({
   required this.registrationOptions,
-  super.key,
-});</code></pre>
+  Key? key,
+}) : super(key: key);</code></pre>
 </section>
 
 
@@ -111,7 +115,7 @@
 <footer>
   <span class="no-break">
     flutter_user
-      1.0.0
+      2.0.0
   </span>
 
   
