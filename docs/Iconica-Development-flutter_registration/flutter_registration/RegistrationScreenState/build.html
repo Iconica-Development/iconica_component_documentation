@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
 
-  
+  <span class="name" style="padding: 5px;"><a href="https://iconica-development.github.io/iconica_component_documentation/">AppShell Overview</a></span>
+
 </head>
 
 
@@ -51,12 +52,12 @@
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="flutter_registration&#47;RegistrationScreenState-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="flutter_registration&#47;RegistrationScreenState-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
 <h1><span class="kind-method">build</span> method 
 </h1></div>
 
@@ -69,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -205,6 +206,10 @@ Widget build(BuildContext context) {
     titleWidget: widget.registrationOptions.titleWidget,
     loginButton: widget.registrationOptions.loginButton,
     isLoading: _isLoading,
+    titleFlex: widget.registrationOptions.titleFlex,
+    formFlex: widget.registrationOptions.formFlex,
+    beforeTitleFlex: widget.registrationOptions.beforeTitleFlex,
+    afterTitleFlex: widget.registrationOptions.afterTitleFlex,
   );
 }</code></pre>
 </section>
@@ -233,14 +238,14 @@ Widget build(BuildContext context) {
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+</div><!--/.sidebar-offcanvas-->
 
 </main>
 
 <footer>
   <span class="no-break">
     flutter_registration
-      2.0.1
+      2.0.2
   </span>
 
   
