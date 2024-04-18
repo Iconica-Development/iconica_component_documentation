@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.2/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getAuthStoryRoutes</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getAuthStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_user/AuthUserStoryConfiguration-class.html">AuthUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
@@ -214,6 +214,7 @@
                   loginScreen,
                 ) ??
                 Scaffold(
+                  backgroundColor: const Color(0xffFAF9F6),
                   body: loginScreen,
                 ),
           );
@@ -225,17 +226,18 @@
           var registrationScreen = Stack(
             children: [
               RegistrationScreen(
-                registrationOptions: configuration.registrationOptionsBuilder
-                        ?.call(context) ??
-                    RegistrationOptions(
-                      registrationRepository: ExampleRegistrationRepository(),
-                      registrationSteps: RegistrationOptions.getDefaultSteps(),
-                      afterRegistration: () async =&gt; context.push(
-                        configuration.afterRegistrationPage != null
-                            ? AuthUserStoryRoutes.afterRegistration
-                            : AuthUserStoryRoutes.loginScreen,
-                      ),
-                    ),
+                registrationOptions:
+                    configuration.registrationOptionsBuilder?.call(context) ??
+                        RegistrationOptions.defaults(
+                          context,
+                          configuration.registrationRepository ??
+                              ExampleRegistrationRepository(),
+                          () async =&gt; context.push(
+                            configuration.useAfterRegistrationPage
+                                ? AuthUserStoryRoutes.afterRegistration
+                                : AuthUserStoryRoutes.loginScreen,
+                          ),
+                        ),
               ),
               configuration.pageOverlayBuilder?.call(context) ??
                   const SizedBox.shrink(),
@@ -249,7 +251,13 @@
                   registrationScreen,
                 ) ??
                 Scaffold(
-                  body: registrationScreen,
+                  appBar: AppBar(
+                    backgroundColor: const Color(0xffFAF9F6),
+                  ),
+                  backgroundColor: const Color(0xffFAF9F6),
+                  body: SafeArea(
+                    child: registrationScreen,
+                  ),
                 ),
           );
         },
@@ -265,9 +273,15 @@
               ForgotPasswordForm(
                 options: configuration.loginOptionsBuilder?.call(context) ??
                     LoginOptions.defaults(),
-                description:
-                    configuration.forgotPasswordDescription?.call(context) ??
-                        const SizedBox.shrink(),
+                description: configuration.forgotPasswordDescription
+                        ?.call(context) ??
+                    const Text(
+                      &#39;No worries. Enter your email address below so we can&#39;
+                      &#39; send you a link to reset your password.&#39;,
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                    ),
                 onRequestForgotPassword: (email) async {
                   if (configuration.onRequestForgotPassword != null) {
                     await configuration.onRequestForgotPassword
@@ -307,7 +321,15 @@
                     }
                   }
                 },
-                title: configuration.forgotPasswordTitle?.call(context),
+                title: configuration.forgotPasswordTitle?.call(context) ??
+                    const Text(
+                      &#39;Forgot Password&#39;,
+                      style: TextStyle(
+                        color: Color(0xff71C6D1),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 24,
+                      ),
+                    ),
               ),
               configuration.pageOverlayBuilder?.call(context) ??
                   const SizedBox.shrink(),
@@ -321,9 +343,13 @@
                   forgotPasswordScreen,
                 ) ??
                 Scaffold(
+                  appBar: AppBar(),
                   body: SafeArea(
                     child: Center(
-                      child: forgotPasswordScreen,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
+                        child: forgotPasswordScreen,
+                      ),
                     ),
                   ),
                 ),
@@ -335,27 +361,12 @@
         pageBuilder: (context, state) {
           var onboarding = configuration.onboardingScreen ??
               Onboarding(
-                backButton: configuration.onboardingConfiguration?.backButton,
-                nextButton: configuration.onboardingConfiguration?.nextButton,
-                accessInputs:
-                    configuration.onboardingConfiguration?.accessInputs,
-                personalInputs:
-                    configuration.onboardingConfiguration?.personalInputs,
-                imagePickerConfig:
-                    configuration.onboardingConfiguration?.imagePickerConfig ??
-                        getImagePickerConfig(),
-                stepperTheme:
-                    configuration.onboardingConfiguration?.stepperTheme ??
-                        getStepperTheme(context),
-                configuration: configuration.onboardingConfiguration ??
-                    OnboardingConfiguration(),
                 onboardingFinished: (result) =&gt; configuration
                     .onboardingConfiguration?.onboardingFinished
                     ?.call(result, context),
                 onboardingOnNext: (pageNumber, results) =&gt; configuration
                     .onboardingConfiguration?.onboardingOnNext
                     ?.call(pageNumber, results, context),
-                canPopOnboarding: configuration.canPopOnboarding,
               );
           return buildScreenWithoutTransition(
             context: context,
@@ -366,26 +377,71 @@
           );
         },
       ),
-      if (configuration.beforeRegistrationPage != null) ...[
-        GoRoute(
-          path: AuthUserStoryRoutes.beforeRegistration,
-          pageBuilder: (context, state) =&gt; buildScreenWithoutTransition(
-            context: context,
-            state: state,
-            child: configuration.beforeRegistrationPage!.call(context),
-          ),
+      GoRoute(
+        path: AuthUserStoryRoutes.beforeRegistration,
+        pageBuilder: (context, state) =&gt; buildScreenWithoutTransition(
+          context: context,
+          state: state,
+          child: configuration.beforeRegistrationPage!.call(context),
         ),
-      ],
-      if (configuration.afterRegistrationPage != null) ...[
-        GoRoute(
-          path: AuthUserStoryRoutes.afterRegistration,
-          pageBuilder: (context, state) =&gt; buildScreenWithoutTransition(
-            context: context,
-            state: state,
-            child: configuration.afterRegistrationPage!.call(context),
-          ),
+      ),
+      GoRoute(
+        path: AuthUserStoryRoutes.afterRegistration,
+        pageBuilder: (context, state) =&gt; buildScreenWithoutTransition(
+          context: context,
+          state: state,
+          child: configuration.afterRegistrationPage?.call(context) ??
+              Scaffold(
+                body: SafeArea(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 60),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Spacer(),
+                          const Text(
+                            &#39;Your registration was successful&#39;,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 24,
+                              color: Color(0xff71C6D1),
+                            ),
+                          ),
+                          const Spacer(),
+                          InkWell(
+                            onTap: () async {
+                              context.go(AuthUserStoryRoutes.loginScreen);
+                            },
+                            child: Container(
+                              height: 44,
+                              width: 254,
+                              decoration: const BoxDecoration(
+                                color: Color(0xff71C6D1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  &#39;Finish&#39;,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         ),
-      ],
+      ),
     ];</code></pre>
 </section>
 
@@ -419,7 +475,7 @@
 <footer>
   <span class="no-break">
     flutter_user
-      2.0.0
+      3.0.0
   </span>
 
   
