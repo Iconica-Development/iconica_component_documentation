@@ -81,9 +81,10 @@
 <li><span class="parameter" id="-param-splashScreenFuture"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>&gt;</span></span> <span class="parameter-name">splashScreenFuture</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-splashScreenCenterWidget"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a>?</span> <span class="parameter-name">splashScreenCenterWidget</span>, </span></li>
-<li><span class="parameter" id="-param-splashScreenBackgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">splashScreenBackgroundColor</span>, </span></li>
+<li><span class="parameter" id="-param-splashScreenBackgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">splashScreenBackgroundColor</span> = <span class="default-value">const Color(0xff212121)</span>, </span></li>
 <li><span class="parameter" id="-param-canPopFromIntroduction"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">canPopFromIntroduction</span> = <span class="default-value">true</span>, </span></li>
 <li><span class="parameter" id="-param-killswitchService"><span class="type-annotation">KillswitchService?</span> <span class="parameter-name">killswitchService</span>, </span></li>
+<li><span class="parameter" id="-param-showSplashScreen"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showSplashScreen</span> = <span class="default-value">true</span>, </span></li>
 </ol>})
     </section>
 
@@ -109,9 +110,10 @@
   this.minimumSplashScreenDuration = 3,
   this.splashScreenFuture,
   this.splashScreenCenterWidget,
-  this.splashScreenBackgroundColor,
+  this.splashScreenBackgroundColor = const Color(0xff212121),
   this.canPopFromIntroduction = true,
   this.killswitchService,
+  this.showSplashScreen = true,
 });</code></pre>
 </section>
 
@@ -146,7 +148,7 @@
 <footer>
   <span class="no-break">
     flutter_start
-      3.0.0
+      4.0.0
   </span>
 
   

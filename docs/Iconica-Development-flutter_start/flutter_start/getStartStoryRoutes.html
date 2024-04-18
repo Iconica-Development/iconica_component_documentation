@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.2/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getStartStoryRoutes</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getStartStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_start/StartUserStoryConfiguration-class.html">StartUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
@@ -147,7 +147,7 @@
                   body: Center(
                     child:
                         configuration.splashScreenCenterWidget?.call(context) ??
-                            const SizedBox.shrink(),
+                            defaultSplashScreen,
                   ),
                 ),
           );
@@ -167,7 +167,7 @@
               );
             },
             options: configuration.introductionOptionsBuilder?.call(context) ??
-                const IntroductionOptions(),
+                defaultIntroductionOptions,
             physics: configuration.introductionScrollPhysics,
             child: configuration.introductionFallbackScreen,
           );
@@ -221,7 +221,7 @@
 <footer>
   <span class="no-break">
     flutter_start
-      3.0.0
+      4.0.0
   </span>
 
   

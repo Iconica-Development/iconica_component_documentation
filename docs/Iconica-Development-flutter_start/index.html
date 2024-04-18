@@ -119,7 +119,11 @@ Add the following configuration to your flutter_application:</p>
 <td>The builder for the splashScreen.</td>
 </tr>
 <tr>
-<td>introductionOptions</td>
+<td>introductionBuilder</td>
+<td>The builder for the introduction.</td>
+</tr>
+<tr>
+<td>introductionOptionsBuilder</td>
 <td>The options for the introduction.</td>
 </tr>
 <tr>
@@ -129,6 +133,10 @@ Add the following configuration to your flutter_application:</p>
 <tr>
 <td>homeEntry</td>
 <td>The widget that will be shown after the introduction.</td>
+</tr>
+<tr>
+<td>homeScreenRoute</td>
+<td>The route that will be shown after the introduction when using gorouter</td>
 </tr>
 <tr>
 <td>introductionFallbackScreen</td>
@@ -145,6 +153,34 @@ Add the following configuration to your flutter_application:</p>
 <tr>
 <td>useKillswitch</td>
 <td>Whether or not the killswitch should be used. This will only work when you use the splashScreen and you need to have a active internet connection</td>
+</tr>
+<tr>
+<td>minimumSplashScreenDuration</td>
+<td>The minimum duration the splashScreen should be shown.</td>
+</tr>
+<tr>
+<td>splashScreenFuture</td>
+<td>The future that will be awaited before the splashScreen is closed.</td>
+</tr>
+<tr>
+<td>splashScreenCenterWidget</td>
+<td>The widget that will be shown in the center of the splashScreen.</td>
+</tr>
+<tr>
+<td>splashScreenBackgroundColor</td>
+<td>The background color of the splashScreen.</td>
+</tr>
+<tr>
+<td>canPopFromIntroduction</td>
+<td>Whether or not the introduction can be popped.</td>
+</tr>
+<tr>
+<td>killswitchService</td>
+<td>The service for the killswitch. Instead of the default service</td>
+</tr>
+<tr>
+<td>showSplashScreen</td>
+<td>Whether or not the splashScreen should be shown.</td>
 </tr>
 </tbody>
 </table>
@@ -202,7 +238,7 @@ If you would like to contribute to the plugin (e.g. by improving the documentati
 <footer>
   <span class="no-break">
     flutter_start
-      3.0.0
+      4.0.0
   </span>
 
   

@@ -100,7 +100,7 @@
     ),
   );
 
-  if (configuration.startWithIntroScreen) {
+  if (!configuration.showSplashScreen &amp;&amp; configuration.showIntroduction) {
     initialRoute = MaterialPageRoute(
       builder: (context) =&gt; _introduction(
         configuration,
@@ -144,7 +144,7 @@
 <footer>
   <span class="no-break">
     flutter_start
-      3.0.0
+      4.0.0
   </span>
 
   
