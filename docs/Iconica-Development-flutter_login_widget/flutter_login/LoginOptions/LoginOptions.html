@@ -64,18 +64,18 @@
     <section class="multi-line-signature">
       const
       <span class="name ">LoginOptions</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-image"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">image</span>, </span></li>
-<li><span class="parameter" id="-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">title</span>, </span></li>
+<li><span class="parameter" id="-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">const Text(&#39;Log in&#39;, style: TextStyle(color: Color(0xff71C6D1), fontWeight: FontWeight.w800, fontSize: 24))</span>, </span></li>
 <li><span class="parameter" id="-param-subtitle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">subtitle</span>, </span></li>
 <li><span class="parameter" id="-param-maxFormWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxFormWidth</span>, </span></li>
 <li><span class="parameter" id="-param-emailTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">emailTextStyle</span>, </span></li>
 <li><span class="parameter" id="-param-passwordTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">passwordTextStyle</span>, </span></li>
 <li><span class="parameter" id="-param-emailTextAlign"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/TextAlign.html">TextAlign</a>?</span> <span class="parameter-name">emailTextAlign</span>, </span></li>
 <li><span class="parameter" id="-param-passwordTextAlign"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/TextAlign.html">TextAlign</a>?</span> <span class="parameter-name">passwordTextAlign</span>, </span></li>
-<li><span class="parameter" id="-param-emailDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">emailDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span></li>
-<li><span class="parameter" id="-param-passwordDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">passwordDecoration</span> = <span class="default-value">const InputDecoration()</span>, </span></li>
+<li><span class="parameter" id="-param-emailDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">emailDecoration</span> = <span class="default-value">const InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 8), labelText: &#39;Email address&#39;, border: OutlineInputBorder(), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff71C6D1))), labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 16))</span>, </span></li>
+<li><span class="parameter" id="-param-passwordDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a></span> <span class="parameter-name">passwordDecoration</span> = <span class="default-value">const InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 8), labelText: &#39;Password&#39;, border: OutlineInputBorder(), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff71C6D1))), labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 16))</span>, </span></li>
 <li><span class="parameter" id="-param-initialEmail"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialEmail</span> = <span class="default-value">&#39;&#39;</span>, </span></li>
 <li><span class="parameter" id="-param-initialPassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialPassword</span> = <span class="default-value">&#39;&#39;</span>, </span></li>
-<li><span class="parameter" id="-param-spacers"><span class="type-annotation"><a href="../../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span> <span class="parameter-name">spacers</span> = <span class="default-value">const LoginSpacerOptions()</span>, </span></li>
+<li><span class="parameter" id="-param-spacers"><span class="type-annotation"><a href="../../flutter_login/LoginSpacerOptions-class.html">LoginSpacerOptions</a></span> <span class="parameter-name">spacers</span> = <span class="default-value">const LoginSpacerOptions(spacerBeforeTitle: 8, spacerAfterTitle: 2, formFlexValue: 2)</span>, </span></li>
 <li><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../../flutter_login/LoginTranslations-class.html">LoginTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const LoginTranslations()</span>, </span></li>
 <li><span class="parameter" id="-param-validationService"><span class="type-annotation"><a href="../../flutter_login/ValidationService-class.html">ValidationService</a>?</span> <span class="parameter-name">validationService</span>, </span></li>
 <li><span class="parameter" id="-param-loginButtonBuilder"><span class="type-annotation"><a href="../../flutter_login/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">loginButtonBuilder</span> = <span class="default-value">_createLoginButton</span>, </span></li>
@@ -85,7 +85,11 @@
 <li><span class="parameter" id="-param-emailInputContainerBuilder"><span class="type-annotation"><a href="../../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">emailInputContainerBuilder</span> = <span class="default-value">_createEmailInputContainer</span>, </span></li>
 <li><span class="parameter" id="-param-passwordInputContainerBuilder"><span class="type-annotation"><a href="../../flutter_login/InputContainerBuilder.html">InputContainerBuilder</a></span> <span class="parameter-name">passwordInputContainerBuilder</span> = <span class="default-value">_createPasswordInputContainer</span>, </span></li>
 <li><span class="parameter" id="-param-showObscurePassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showObscurePassword</span> = <span class="default-value">true</span>, </span></li>
-<li><span class="parameter" id="-param-forgotPasswordSpacerOptions"><span class="type-annotation"><a href="../../flutter_login/ForgotPasswordSpacerOptions-class.html">ForgotPasswordSpacerOptions</a></span> <span class="parameter-name">forgotPasswordSpacerOptions</span> = <span class="default-value">const ForgotPasswordSpacerOptions()</span>, </span></li>
+<li><span class="parameter" id="-param-forgotPasswordSpacerOptions"><span class="type-annotation"><a href="../../flutter_login/ForgotPasswordSpacerOptions-class.html">ForgotPasswordSpacerOptions</a></span> <span class="parameter-name">forgotPasswordSpacerOptions</span> = <span class="default-value">const ForgotPasswordSpacerOptions(spacerAfterButton: 3, spacerBeforeTitle: 1)</span>, </span></li>
+<li><span class="parameter" id="-param-loginBackgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">loginBackgroundColor</span> = <span class="default-value">const Color(0xffFAF9F6)</span>, </span></li>
+<li><span class="parameter" id="-param-forgotPasswordBackgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">forgotPasswordBackgroundColor</span> = <span class="default-value">const Color(0xffFAF9F6)</span>, </span></li>
+<li><span class="parameter" id="-param-forgotPasswordScreenPadding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Padding-class.html">Padding</a></span> <span class="parameter-name">forgotPasswordScreenPadding</span> = <span class="default-value">const Padding(padding: EdgeInsets.symmetric(horizontal: 60))</span>, </span></li>
+<li><span class="parameter" id="-param-forgotPasswordCustomAppBar"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/AppBar-class.html">AppBar</a>?</span> <span class="parameter-name">forgotPasswordCustomAppBar</span>, </span></li>
 </ol>})
     </section>
 
@@ -97,18 +101,57 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">const LoginOptions({
   this.image,
-  this.title,
+  this.title = const Text(
+    &#39;Log in&#39;,
+    style: TextStyle(
+      color: Color(0xff71C6D1),
+      fontWeight: FontWeight.w800,
+      fontSize: 24,
+    ),
+  ),
   this.subtitle,
   this.maxFormWidth,
   this.emailTextStyle,
   this.passwordTextStyle,
   this.emailTextAlign,
   this.passwordTextAlign,
-  this.emailDecoration = const InputDecoration(),
-  this.passwordDecoration = const InputDecoration(),
+  this.emailDecoration = const InputDecoration(
+    contentPadding: EdgeInsets.symmetric(horizontal: 8),
+    labelText: &#39;Email address&#39;,
+    border: OutlineInputBorder(),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Color(0xff71C6D1),
+      ),
+    ),
+    labelStyle: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+    ),
+  ),
+  this.passwordDecoration = const InputDecoration(
+    contentPadding: EdgeInsets.symmetric(horizontal: 8),
+    labelText: &#39;Password&#39;,
+    border: OutlineInputBorder(),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Color(0xff71C6D1),
+      ),
+    ),
+    labelStyle: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+    ),
+  ),
   this.initialEmail = &#39;&#39;,
   this.initialPassword = &#39;&#39;,
-  this.spacers = const LoginSpacerOptions(),
+  this.spacers = const LoginSpacerOptions(
+    spacerBeforeTitle: 8,
+    spacerAfterTitle: 2,
+    formFlexValue: 2,
+  ),
   this.translations = const LoginTranslations(),
   this.validationService,
   this.loginButtonBuilder = _createLoginButton,
@@ -119,7 +162,16 @@
   this.emailInputContainerBuilder = _createEmailInputContainer,
   this.passwordInputContainerBuilder = _createPasswordInputContainer,
   this.showObscurePassword = true,
-  this.forgotPasswordSpacerOptions = const ForgotPasswordSpacerOptions(),
+  this.forgotPasswordSpacerOptions = const ForgotPasswordSpacerOptions(
+    spacerAfterButton: 3,
+    spacerBeforeTitle: 1,
+  ),
+  this.loginBackgroundColor = const Color(0xffFAF9F6),
+  this.forgotPasswordBackgroundColor = const Color(0xffFAF9F6),
+  this.forgotPasswordScreenPadding = const Padding(
+    padding: EdgeInsets.symmetric(horizontal: 60),
+  ),
+  this.forgotPasswordCustomAppBar,
 });</code></pre>
 </section>
 
