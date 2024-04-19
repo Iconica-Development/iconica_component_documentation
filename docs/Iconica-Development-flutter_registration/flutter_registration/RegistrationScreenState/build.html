@@ -189,7 +189,7 @@ Widget build(BuildContext context) {
   var translations = widget.registrationOptions.registrationTranslations;
 
   return AuthScreen(
-    steps: widget.registrationOptions.registrationSteps,
+    steps: widget.registrationOptions.steps,
     customAppBar: widget.registrationOptions.customAppbarBuilder?.call(
       translations.title,
     ),
