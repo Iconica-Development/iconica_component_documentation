@@ -66,10 +66,8 @@
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../flutter_user/AuthStep-class.html">AuthStep</a></span>&gt;</span></span>
 <span class="name ">getDefaultSteps</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getDefaultSteps-param-emailController"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> <span class="parameter-name">emailController</span>, </span></li>
-<li><span class="parameter" id="getDefaultSteps-param-pass1Controller"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> <span class="parameter-name">pass1Controller</span>, </span></li>
-<li><span class="parameter" id="getDefaultSteps-param-pass1Hidden"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">pass1Hidden</span> = <span class="default-value">true</span>, </span></li>
-<li><span class="parameter" id="getDefaultSteps-param-pass2Controller"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> <span class="parameter-name">pass2Controller</span>, </span></li>
-<li><span class="parameter" id="getDefaultSteps-param-pass2Hidden"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">pass2Hidden</span> = <span class="default-value">true</span>, </span></li>
+<li><span class="parameter" id="getDefaultSteps-param-passController"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> <span class="parameter-name">passController</span>, </span></li>
+<li><span class="parameter" id="getDefaultSteps-param-passHidden"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">passHidden</span> = <span class="default-value">true</span>, </span></li>
 <li><span class="parameter" id="getDefaultSteps-param-passHideOnChange"><span class="type-annotation">dynamic</span> <span class="parameter-name">passHideOnChange</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-mainPass"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">mainPass</span>, </span></li>
 <li><span class="parameter" id="param-value"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">value</span></span></li>
 </ol>)?, </span></li>
@@ -107,10 +105,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">static List&lt;AuthStep&gt; getDefaultSteps({
   TextEditingController? emailController,
-  TextEditingController? pass1Controller,
-  bool pass1Hidden = true,
-  TextEditingController? pass2Controller,
-  bool pass2Hidden = true,
+  TextEditingController? passController,
+  bool passHidden = true,
   Function(bool mainPass, bool value)? passHideOnChange,
   RegistrationTranslations translations =
       const RegistrationTranslations.empty(),
@@ -119,8 +115,6 @@
   TextStyle? textStyle,
   String? initialEmail,
 }) {
-  var password1 = &#39;&#39;;
-
   return [
     AuthStep(
       fields: [
@@ -129,18 +123,25 @@
           textEditingController: emailController,
           value: initialEmail ?? &#39;&#39;,
           title: titleBuilder?.call(translations.defaultEmailTitle) ??
-              Padding(
-                padding: const EdgeInsets.only(top: 24.0, bottom: 12.0),
+              const Padding(
+                padding: EdgeInsets.only(top: 180),
                 child: Text(
-                  translations.defaultEmailTitle,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  &#39;Enter your e-mail&#39;,
+                  style: TextStyle(
+                    color: Color(0xff71C6D1),
+                    fontWeight: FontWeight.w800,
+                    fontSize: 24,
+                  ),
                 ),
               ),
           textFieldDecoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
             label: labelBuilder?.call(translations.defaultEmailLabel),
             hintText: translations.defaultEmailHint,
+            border: const OutlineInputBorder(),
           ),
           textStyle: textStyle,
+          padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
           validators: [
             (email) =&gt; (email == null || email.isEmpty)
                 ? translations.defaultEmailEmpty
@@ -151,65 +152,38 @@
                     ? null
                     : translations.defaultEmailValidatorMessage,
           ],
-        )
+        ),
       ],
     ),
     AuthStep(
       fields: [
         AuthPassField(
-          name: &#39;password1&#39;,
-          textEditingController: pass1Controller,
-          title: titleBuilder?.call(translations.defaultPassword1Title) ??
+          name: &#39;password&#39;,
+          textEditingController: passController,
+          title: titleBuilder?.call(translations.defaultPasswordTitle) ??
               Padding(
-                padding: const EdgeInsets.only(top: 24.0, bottom: 12.0),
+                padding: const EdgeInsets.only(top: 180),
                 child: Text(
-                  translations.defaultPassword1Title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  translations.defaultPasswordTitle,
+                  style: const TextStyle(
+                    color: Color(0xff71C6D1),
+                    fontWeight: FontWeight.w800,
+                    fontSize: 24,
+                  ),
                 ),
               ),
           textFieldDecoration: InputDecoration(
-            label: labelBuilder?.call(translations.defaultPassword1Label),
-            hintText: translations.defaultPassword1Hint,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+            label: labelBuilder?.call(translations.defaultPasswordLabel),
+            hintText: translations.defaultPasswordHint,
+            border: const OutlineInputBorder(),
           ),
+          padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
           textStyle: textStyle,
           validators: [
             (value) =&gt; (value == null || value.isEmpty)
-                ? translations.defaultPassword1ValidatorMessage
+                ? translations.defaultPasswordValidatorMessage
                 : null,
-          ],
-          onChange: (value) {
-            password1 = value;
-          },
-        ),
-        AuthPassField(
-          name: &#39;password2&#39;,
-          textEditingController: pass2Controller,
-          title: titleBuilder?.call(translations.defaultPassword2Title) ??
-              Padding(
-                padding: const EdgeInsets.only(top: 24.0, bottom: 12.0),
-                child: Text(
-                  translations.defaultPassword2Title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-          textFieldDecoration: InputDecoration(
-            label: labelBuilder?.call(translations.defaultPassword2Label),
-            hintText: translations.defaultPassword2Hint,
-          ),
-          textStyle: textStyle,
-          validators: [
-            (value) {
-              if (pass1Controller != null) {
-                if (value != pass1Controller.value.text) {
-                  return translations.defaultPassword2ValidatorMessage;
-                }
-              } else {
-                if (value != password1) {
-                  return translations.defaultPassword2ValidatorMessage;
-                }
-              }
-              return null;
-            }
           ],
         ),
       ],
