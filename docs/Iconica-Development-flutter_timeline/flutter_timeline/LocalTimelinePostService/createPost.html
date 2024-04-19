@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a></span>&gt;</span></span>
-<span class="name ">createPost</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="createPost-param-post"><span class="type-annotation"><a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a></span> <span class="parameter-name">post</span></span></li>
+<span class="name ">createPost</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="createPost-param-post"><span class="type-annotation"><a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a></span> <span class="parameter-name">post</span></span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -86,7 +86,13 @@
 Future&lt;TimelinePost&gt; createPost(TimelinePost post) async {
   posts.add(
     post.copyWith(
-      creator: const TimelinePosterUserModel(userId: &#39;test_user&#39;),
+      creator: const TimelinePosterUserModel(
+        userId: &#39;test_user&#39;,
+        imageUrl:
+            &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
+        firstName: &#39;Dirk&#39;,
+        lastName: &#39;lukassen&#39;,
+      ),
     ),
   );
   notifyListeners();

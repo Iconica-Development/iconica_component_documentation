@@ -82,11 +82,20 @@
         creatorId: &#39;test_user&#39;,
         title: &#39;Post 0&#39;,
         category: null,
+        imageUrl:
+            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
         content: &#39;Standard post without image made by the current user&#39;,
         likes: 0,
         reaction: 0,
         createdAt: DateTime.now(),
         reactionEnabled: false,
+        creator: const TimelinePosterUserModel(
+          userId: &#39;test_user&#39;,
+          imageUrl:
+              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
+          firstName: &#39;Dirk&#39;,
+          lastName: &#39;lukassen&#39;,
+        ),
       ),
       TimelinePost(
         id: &#39;Post1&#39;,
@@ -100,7 +109,14 @@
         createdAt: DateTime.now(),
         reactionEnabled: false,
         imageUrl:
-            &#39;https:&#47;&#47;s3-eu-west-1.amazonaws.com&#47;sortlist-core-api&#47;6qpvvqjtmniirpkvp8eg83bicnc2&#39;,
+            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
+        creator: const TimelinePosterUserModel(
+          userId: &#39;test_user&#39;,
+          imageUrl:
+              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
+          firstName: &#39;Dirk&#39;,
+          lastName: &#39;lukassen&#39;,
+        ),
       ),
       TimelinePost(
         id: &#39;Post2&#39;,
@@ -114,7 +130,14 @@
         createdAt: DateTime.now(),
         reactionEnabled: true,
         imageUrl:
-            &#39;https:&#47;&#47;s3-eu-west-1.amazonaws.com&#47;sortlist-core-api&#47;6qpvvqjtmniirpkvp8eg83bicnc2&#39;,
+            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
+        creator: const TimelinePosterUserModel(
+          userId: &#39;test_user&#39;,
+          imageUrl:
+              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
+          firstName: &#39;Dirk&#39;,
+          lastName: &#39;lukassen&#39;,
+        ),
       ),
     ];</code></pre>
 </section>

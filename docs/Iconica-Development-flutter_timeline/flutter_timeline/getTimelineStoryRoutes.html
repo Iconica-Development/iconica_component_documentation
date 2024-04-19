@@ -64,9 +64,9 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.1/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
-<span class="name ">getTimelineStoryRoutes</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getTimelineStoryRoutes-param-configuration">{<span class="type-annotation"><a href="../flutter_timeline/TimelineUserStoryConfiguration-class.html">TimelineUserStoryConfiguration</a>?</span> <span class="parameter-name">configuration</span>}</span></li>
-</ol>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="name ">getTimelineStoryRoutes</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getTimelineStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_timeline/TimelineUserStoryConfiguration-class.html">TimelineUserStoryConfiguration</a>?</span> <span class="parameter-name">configuration</span>, </span></li>
+</ol>})
 
         
 
@@ -114,10 +114,16 @@ If no configuration is provided, default values will be used.</p>
         );
 
         var button = FloatingActionButton(
+          backgroundColor: Theme.of(context).primaryColor,
           onPressed: () async =&gt; context.go(
             TimelineUserStoryRoutes.timelinePostCreation,
           ),
-          child: const Icon(Icons.add),
+          shape: const CircleBorder(),
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 30,
+          ),
         );
 
         return buildScreenWithoutTransition(
@@ -126,7 +132,13 @@ If no configuration is provided, default values will be used.</p>
           child: config.homeOpenPageBuilder
                   ?.call(context, timelineScreen, button) ??
               Scaffold(
-                appBar: AppBar(),
+                appBar: AppBar(
+                  backgroundColor: Colors.black,
+                  title: Text(
+                    &#39;Iconinstagram&#39;,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
                 body: timelineScreen,
                 floatingActionButton: button,
               ),
@@ -137,18 +149,19 @@ If no configuration is provided, default values will be used.</p>
       path: TimelineUserStoryRoutes.timelineView,
       pageBuilder: (context, state) {
         var post =
-            config.service.postService.getPost(state.pathParameters[&#39;post&#39;]!)!;
+            config.service.postService.getPost(state.pathParameters[&#39;post&#39;]!);
 
         var timelinePostWidget = TimelinePostScreen(
           userId: config.userId,
           options: config.optionsBuilder(context),
           service: config.service,
-          post: post,
+          post: post!,
           onPostDelete: () =&gt; config.onPostDelete?.call(context, post),
           onUserTap: (user) =&gt; config.onUserTap?.call(context, user),
         );
 
         var backButton = IconButton(
+          color: Colors.white,
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () =&gt; context.go(TimelineUserStoryRoutes.timelineHome),
         );
@@ -161,6 +174,11 @@ If no configuration is provided, default values will be used.</p>
               Scaffold(
                 appBar: AppBar(
                   leading: backButton,
+                  backgroundColor: Colors.black,
+                  title: Text(
+                    &#39;Category&#39;,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
                 body: timelinePostWidget,
               ),
@@ -204,8 +222,10 @@ If no configuration is provided, default values will be used.</p>
                   ?.call(context, timelinePostCreationWidget, backButton) ??
               Scaffold(
                 appBar: AppBar(
+                  backgroundColor: Colors.black,
                   title: Text(
                     config.optionsBuilder(context).translations.postCreation,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   leading: backButton,
                 ),
