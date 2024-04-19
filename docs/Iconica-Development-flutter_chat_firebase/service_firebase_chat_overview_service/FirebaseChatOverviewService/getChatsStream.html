@@ -175,22 +175,25 @@ Stream&lt;List&lt;ChatModel&gt;&gt; getChatsStream() {
                 imageUrl: chat.imageUrl ?? &#39;&#39;,
                 unreadMessages: unread,
                 users: users,
-                lastMessage: chat.lastMessage != null &amp;&amp;
-                        chat.lastMessage!.imageUrl == null
-                    ? ChatTextMessageModel(
-                        sender: otherUser!,
-                        text: chat.lastMessage!.text!,
-                        timestamp: DateTime.fromMillisecondsSinceEpoch(
-                          chat.lastMessage!.timestamp.millisecondsSinceEpoch,
-                        ),
-                      )
-                    : ChatImageMessageModel(
-                        sender: otherUser!,
-                        imageUrl: chat.lastMessage!.imageUrl!,
-                        timestamp: DateTime.fromMillisecondsSinceEpoch(
-                          chat.lastMessage!.timestamp.millisecondsSinceEpoch,
-                        ),
-                      ),
+                lastMessage: chat.lastMessage != null
+                    ? chat.lastMessage!.imageUrl == null
+                        ? ChatTextMessageModel(
+                            sender: otherUser!,
+                            text: chat.lastMessage!.text!,
+                            timestamp: DateTime.fromMillisecondsSinceEpoch(
+                              chat.lastMessage!.timestamp
+                                  .millisecondsSinceEpoch,
+                            ),
+                          )
+                        : ChatImageMessageModel(
+                            sender: otherUser!,
+                            imageUrl: chat.lastMessage!.imageUrl!,
+                            timestamp: DateTime.fromMillisecondsSinceEpoch(
+                              chat.lastMessage!.timestamp
+                                  .millisecondsSinceEpoch,
+                            ),
+                          )
+                    : null,
                 canBeDeleted: chat.canBeDeleted,
                 lastUsed: chat.lastUsed == null
                     ? null
@@ -272,7 +275,7 @@ Stream&lt;List&lt;ChatModel&gt;&gt; getChatsStream() {
 <footer>
   <span class="no-break">
     flutter_chat_firebase
-      1.4.0
+      1.4.1
   </span>
 
   

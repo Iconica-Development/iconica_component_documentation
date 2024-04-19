@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../flutter_chat/ChatMessageModel-class.html">ChatMessageModel</a></span>&gt;</span></span>&gt;</span></span>
-<span class="name ">getMessagesStream</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getMessagesStream-param-chatId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">chatId</span></span></li>
+<span class="name ">getMessagesStream</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getMessagesStream-param-chatId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">chatId</span></span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -92,9 +92,11 @@ Stream&lt;List&lt;ChatMessageModel&gt;&gt; getMessagesStream(
   _controller.onListen = () async {
     _subscription =
         chatOverviewService.getChatById(chatId).asStream().listen((event) {
-      _cumulativeMessages.clear();
-      _cumulativeMessages.addAll(event.messages!);
-      _controller.add(_cumulativeMessages);
+      if (event.messages != null) {
+        _cumulativeMessages.clear();
+        _cumulativeMessages.addAll(event.messages!);
+        _controller.add(_cumulativeMessages);
+      }
     });
   };
 
@@ -133,7 +135,7 @@ Stream&lt;List&lt;ChatMessageModel&gt;&gt; getMessagesStream(
 <footer>
   <span class="no-break">
     flutter_chat
-      1.4.0
+      1.4.1
   </span>
 
   

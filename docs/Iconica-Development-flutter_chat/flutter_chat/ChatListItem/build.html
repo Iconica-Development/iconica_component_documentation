@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -118,54 +118,61 @@ and</li>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Widget build(BuildContext context) =&gt; GestureDetector(
-      onTap: () =&gt; widget.onPressChat(chat),
-      child: Container(
-        color: Colors.transparent,
-        child: widget.options.chatRowContainerBuilder(
-          (chat is PersonalChatModel)
-              ? ChatRow(
-                  unreadMessages: chat.unreadMessages ?? 0,
-                  avatar: widget.options.userAvatarBuilder(
-                    (chat as PersonalChatModel).user,
-                    40.0,
-                  ),
-                  title: (chat as PersonalChatModel).user.fullName ??
-                      translations.anonymousUser,
-                  subTitle: chat.lastMessage != null
-                      ? chat.lastMessage is ChatTextMessageModel
-                          ? (chat.lastMessage! as ChatTextMessageModel).text
-                          : &#39;📷 &#39;
-                              &#39;${translations.image}&#39;
-                      : &#39;&#39;,
-                  lastUsed: chat.lastUsed != null
-                      ? _dateFormatter.format(
-                          date: chat.lastUsed!,
-                        )
-                      : null,
-                )
-              : ChatRow(
-                  title: (chat as GroupChatModel).title,
-                  unreadMessages: chat.unreadMessages ?? 0,
-                  subTitle: chat.lastMessage != null
-                      ? chat.lastMessage is ChatTextMessageModel
-                          ? (chat.lastMessage! as ChatTextMessageModel).text
-                          : &#39;📷 &#39;
-                              &#39;${translations.image}&#39;
-                      : &#39;&#39;,
-                  avatar: widget.options.groupAvatarBuilder(
-                    (chat as GroupChatModel).title,
-                    (chat as GroupChatModel).imageUrl,
-                    40.0,
-                  ),
-                  lastUsed: chat.lastUsed != null
-                      ? _dateFormatter.format(
-                          date: chat.lastUsed!,
-                        )
-                      : null,
-                ),
+Widget build(BuildContext context) =&gt; Column(
+      children: [
+        GestureDetector(
+          onTap: () =&gt; widget.onPressChat(chat),
+          child: Container(
+            color: Colors.transparent,
+            child: widget.options.chatRowContainerBuilder(
+              (chat is PersonalChatModel)
+                  ? ChatRow(
+                      unreadMessages: chat.unreadMessages ?? 0,
+                      avatar: widget.options.userAvatarBuilder(
+                        (chat as PersonalChatModel).user,
+                        40.0,
+                      ),
+                      title: (chat as PersonalChatModel).user.fullName ??
+                          translations.anonymousUser,
+                      subTitle: chat.lastMessage != null
+                          ? chat.lastMessage is ChatTextMessageModel
+                              ? (chat.lastMessage! as ChatTextMessageModel)
+                                  .text
+                              : &#39;📷 &#39;
+                                  &#39;${translations.image}&#39;
+                          : &#39;&#39;,
+                      lastUsed: chat.lastUsed != null
+                          ? _dateFormatter.format(
+                              date: chat.lastUsed!,
+                            )
+                          : null,
+                    )
+                  : ChatRow(
+                      title: (chat as GroupChatModel).title,
+                      unreadMessages: chat.unreadMessages ?? 0,
+                      subTitle: chat.lastMessage != null
+                          ? chat.lastMessage is ChatTextMessageModel
+                              ? (chat.lastMessage! as ChatTextMessageModel)
+                                  .text
+                              : &#39;📷 &#39;
+                                  &#39;${translations.image}&#39;
+                          : &#39;&#39;,
+                      avatar: widget.options.groupAvatarBuilder(
+                        (chat as GroupChatModel).title,
+                        (chat as GroupChatModel).imageUrl,
+                        40.0,
+                      ),
+                      lastUsed: chat.lastUsed != null
+                          ? _dateFormatter.format(
+                              date: chat.lastUsed!,
+                            )
+                          : null,
+                    ),
+            ),
+          ),
         ),
-      ),
+        const Divider(),
+      ],
     );</code></pre>
 </section>
 
@@ -200,7 +207,7 @@ Widget build(BuildContext context) =&gt; GestureDetector(
 <footer>
   <span class="no-break">
     flutter_chat
-      1.4.0
+      1.4.1
   </span>
 
   

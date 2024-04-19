@@ -64,8 +64,8 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.1/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
-<span class="name ">getChatStoryRoutes</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getChatStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_chat/ChatUserStoryConfiguration-class.html">ChatUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="name ">getChatStoryRoutes</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getChatStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_chat/ChatUserStoryConfiguration-class.html">ChatUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
         
@@ -233,12 +233,13 @@
       GoRoute(
         path: ChatUserStoryRoutes.newGroupChatScreen,
         pageBuilder: (context, state) {
-          var newChatScreen = NewGroupChatScreen(
+          var newGroupChatScreen = NewGroupChatScreen(
             options: configuration.chatOptionsBuilder(context),
             translations: configuration.translations,
             service: configuration.chatService,
-            onPressGroupChatOverview: (user) async =&gt; context.push(
+            onPressGroupChatOverview: (users) async =&gt; context.push(
               ChatUserStoryRoutes.newGroupChatOverviewScreen,
+              extra: users,
             ),
           );
           return buildScreenWithoutTransition(
@@ -246,10 +247,51 @@
             state: state,
             child: configuration.chatPageBuilder?.call(
                   context,
-                  newChatScreen,
+                  newGroupChatScreen,
                 ) ??
                 Scaffold(
-                  body: newChatScreen,
+                  body: newGroupChatScreen,
+                ),
+          );
+        },
+      ),
+      GoRoute(
+        path: ChatUserStoryRoutes.newGroupChatOverviewScreen,
+        pageBuilder: (context, state) {
+          var users = state.extra! as List&lt;ChatUserModel&gt;;
+          var newGroupChatOverviewScreen = NewGroupChatOverviewScreen(
+            options: configuration.chatOptionsBuilder(context),
+            translations: configuration.translations,
+            service: configuration.chatService,
+            users: users,
+            onPressCompleteGroupChatCreation: (users, groupChatName) async {
+              configuration.onPressCompleteGroupChatCreation
+                  ?.call(users, groupChatName);
+              var chat = await configuration.chatService.chatOverviewService
+                  .storeChatIfNot(
+                GroupChatModel(
+                  canBeDeleted: true,
+                  title: groupChatName,
+                  imageUrl: &#39;https:&#47;&#47;picsum.photos&#47;200&#47;300&#39;,
+                  users: users,
+                ),
+              );
+              if (context.mounted) {
+                await context.push(
+                  ChatUserStoryRoutes.chatDetailViewPath(chat.id ?? &#39;&#39;),
+                );
+              }
+            },
+          );
+          return buildScreenWithoutTransition(
+            context: context,
+            state: state,
+            child: configuration.chatPageBuilder?.call(
+                  context,
+                  newGroupChatOverviewScreen,
+                ) ??
+                Scaffold(
+                  body: newGroupChatOverviewScreen,
                 ),
           );
         },
@@ -321,7 +363,7 @@
 <footer>
   <span class="no-break">
     flutter_chat
-      1.4.0
+      1.4.1
   </span>
 
   

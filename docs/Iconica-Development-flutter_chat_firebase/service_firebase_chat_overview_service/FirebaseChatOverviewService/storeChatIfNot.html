@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">ChatModel</span>&gt;</span></span>
-<span class="name ">storeChatIfNot</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="storeChatIfNot-param-chat"><span class="type-annotation">ChatModel</span> <span class="parameter-name">chat</span></span></li>
+<span class="name ">storeChatIfNot</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="storeChatIfNot-param-chat"><span class="type-annotation">ChatModel</span> <span class="parameter-name">chat</span></span></li>
 </ol>)
 
       
@@ -137,7 +137,7 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) async {
       ];
 
       var reference = await _db
-          .collection(_options.chatsCollectionName)
+          .collection(_options.chatsMetaDataCollectionName)
           .withConverter(
             fromFirestore: (snapshot, _) =&gt;
                 FirebaseChatDocument.fromJson(snapshot.data()!, snapshot.id),
@@ -146,6 +146,8 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) async {
           .add(
             FirebaseChatDocument(
               personal: false,
+              title: chat.title,
+              imageUrl: chat.imageUrl,
               canBeDeleted: chat.canBeDeleted,
               users: userIds,
               lastUsed: Timestamp.now(),
@@ -160,7 +162,6 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) async {
             .doc(reference.id)
             .set({&#39;users&#39;: userIds}, SetOptions(merge: true));
       }
-
       chat.id = reference.id;
     } else {
       throw Exception(&#39;Chat type not supported for firebase&#39;);
@@ -202,7 +203,7 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) async {
 <footer>
   <span class="no-break">
     flutter_chat_firebase
-      1.4.0
+      1.4.1
   </span>
 
   

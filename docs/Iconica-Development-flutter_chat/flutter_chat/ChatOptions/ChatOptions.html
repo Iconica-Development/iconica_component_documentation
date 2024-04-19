@@ -63,15 +63,16 @@
 
     <section class="multi-line-signature">
       const
-      <span class="name ">ChatOptions</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-newChatButtonBuilder">{<span class="type-annotation"><a href="../../flutter_chat/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">newChatButtonBuilder</span> = <span class="default-value">_createNewChatButton</span>, </span></li>
+      <span class="name ">ChatOptions</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-newChatButtonBuilder"><span class="type-annotation"><a href="../../flutter_chat/ButtonBuilder.html">ButtonBuilder</a></span> <span class="parameter-name">newChatButtonBuilder</span> = <span class="default-value">_createNewChatButton</span>, </span></li>
 <li><span class="parameter" id="-param-messageInputBuilder"><span class="type-annotation"><a href="../../flutter_chat/TextInputBuilder.html">TextInputBuilder</a></span> <span class="parameter-name">messageInputBuilder</span> = <span class="default-value">_createMessageInput</span>, </span></li>
 <li><span class="parameter" id="-param-chatRowContainerBuilder"><span class="type-annotation"><a href="../../flutter_chat/ContainerBuilder.html">ContainerBuilder</a></span> <span class="parameter-name">chatRowContainerBuilder</span> = <span class="default-value">_createChatRowContainer</span>, </span></li>
 <li><span class="parameter" id="-param-imagePickerContainerBuilder"><span class="type-annotation"><a href="../../flutter_chat/ImagePickerContainerBuilder.html">ImagePickerContainerBuilder</a></span> <span class="parameter-name">imagePickerContainerBuilder</span> = <span class="default-value">_createImagePickerContainer</span>, </span></li>
 <li><span class="parameter" id="-param-scaffoldBuilder"><span class="type-annotation"><a href="../../flutter_chat/ScaffoldBuilder.html">ScaffoldBuilder</a></span> <span class="parameter-name">scaffoldBuilder</span> = <span class="default-value">_createScaffold</span>, </span></li>
 <li><span class="parameter" id="-param-userAvatarBuilder"><span class="type-annotation"><a href="../../flutter_chat/UserAvatarBuilder.html">UserAvatarBuilder</a></span> <span class="parameter-name">userAvatarBuilder</span> = <span class="default-value">_createUserAvatar</span>, </span></li>
 <li><span class="parameter" id="-param-groupAvatarBuilder"><span class="type-annotation"><a href="../../flutter_chat/GroupAvatarBuilder.html">GroupAvatarBuilder</a></span> <span class="parameter-name">groupAvatarBuilder</span> = <span class="default-value">_createGroupAvatar</span>, </span></li>
-<li><span class="parameter" id="-param-noChatsPlaceholderBuilder"><span class="type-annotation"><a href="../../flutter_chat/NoChatsPlaceholderBuilder.html">NoChatsPlaceholderBuilder</a></span> <span class="parameter-name">noChatsPlaceholderBuilder</span> = <span class="default-value">_createNoChatsPlaceholder</span>}</span></li>
-</ol>)
+<li><span class="parameter" id="-param-noChatsPlaceholderBuilder"><span class="type-annotation"><a href="../../flutter_chat/NoChatsPlaceholderBuilder.html">NoChatsPlaceholderBuilder</a></span> <span class="parameter-name">noChatsPlaceholderBuilder</span> = <span class="default-value">_createNoChatsPlaceholder</span>, </span></li>
+<li><span class="parameter" id="-param-noUsersPlaceholderBuilder"><span class="type-annotation"><a href="../../flutter_chat/NoUsersPlaceholderBuilder.html">NoUsersPlaceholderBuilder</a></span> <span class="parameter-name">noUsersPlaceholderBuilder</span> = <span class="default-value">_createNoUsersPlaceholder</span>, </span></li>
+</ol>})
     </section>
 
     
@@ -89,6 +90,7 @@
   this.userAvatarBuilder = _createUserAvatar,
   this.groupAvatarBuilder = _createGroupAvatar,
   this.noChatsPlaceholderBuilder = _createNoChatsPlaceholder,
+  this.noUsersPlaceholderBuilder = _createNoUsersPlaceholder,
 });</code></pre>
 </section>
 
@@ -123,7 +125,7 @@
 <footer>
   <span class="no-break">
     flutter_chat
-      1.4.0
+      1.4.1
   </span>
 
   

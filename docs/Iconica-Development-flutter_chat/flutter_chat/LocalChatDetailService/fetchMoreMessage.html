@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">fetchMoreMessage</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="fetchMoreMessage-param-pageSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">pageSize</span>, </span></li>
+<span class="name ">fetchMoreMessage</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="fetchMoreMessage-param-pageSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">pageSize</span>, </span></li>
 <li><span class="parameter" id="fetchMoreMessage-param-chatId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">chatId</span></span></li>
 </ol>)
 
@@ -88,13 +88,13 @@ Future&lt;void&gt; fetchMoreMessage(
   int pageSize,
   String chatId,
 ) async {
-  await chatOverviewService.getChatById(chatId).then((value) {
-    _cumulativeMessages.clear();
+  var value = await chatOverviewService.getChatById(chatId);
+  _cumulativeMessages.clear();
+  if (value.messages != null) {
     _cumulativeMessages.addAll(value.messages!);
-    _controller.add(_cumulativeMessages);
-  });
+  }
+  _controller.add(_cumulativeMessages);
   notifyListeners();
-  return Future.value();
 }</code></pre>
 </section>
 
@@ -129,7 +129,7 @@ Future&lt;void&gt; fetchMoreMessage(
 <footer>
   <span class="no-break">
     flutter_chat
-      1.4.0
+      1.4.1
   </span>
 
   

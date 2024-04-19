@@ -70,7 +70,7 @@
   </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -119,7 +119,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) =&gt; Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 10.0),
@@ -127,7 +127,7 @@ Widget build(BuildContext context) =&gt; Row(
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22.0),
+            padding: const EdgeInsets.only(left: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -136,10 +136,10 @@ Widget build(BuildContext context) =&gt; Row(
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: unreadMessages &gt; 0
-                        ? FontWeight.w600
-                        : FontWeight.w400,
+                        ? FontWeight.w900
+                        : FontWeight.w500,
                   ),
                 ),
                 if (subTitle != null)
@@ -150,11 +150,11 @@ Widget build(BuildContext context) =&gt; Row(
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: unreadMessages &gt; 0
-                            ? FontWeight.w600
-                            : FontWeight.w400,
+                            ? FontWeight.w500
+                            : FontWeight.w300,
                       ),
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                      maxLines: 2,
                     ),
                   ),
               ],
@@ -165,29 +165,30 @@ Widget build(BuildContext context) =&gt; Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(
-              lastUsed ?? &#39;&#39;,
-              style: const TextStyle(
-                color: Color(0xFFBBBBBB),
-                fontSize: 14,
-              ),
-            ),
-            if (unreadMessages &gt; 0) ...[
+            if (lastUsed != null) &#47;&#47; Check if lastUsed is not null
               Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    shape: BoxShape.circle,
+                padding: const EdgeInsets.only(bottom: 4.0),
+                child: Text(
+                  lastUsed!,
+                  style: const TextStyle(
+                    color: Color(0xFFBBBBBB),
+                    fontSize: 14,
                   ),
-                  child: Center(
-                    child: Text(
-                      unreadMessages.toString(),
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
+                ),
+              ),
+            if (unreadMessages &gt; 0) ...[
+              Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primary,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    unreadMessages.toString(),
+                    style: const TextStyle(
+                      fontSize: 14,
                     ),
                   ),
                 ),
@@ -230,7 +231,7 @@ Widget build(BuildContext context) =&gt; Row(
 <footer>
   <span class="no-break">
     flutter_chat_view
-      1.4.0
+      1.4.1
   </span>
 
   
