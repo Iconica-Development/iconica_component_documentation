@@ -84,7 +84,9 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;List&lt;TimelinePost&gt;&gt; fetchPosts(String? category) async {
-  posts = getMockedPosts();
+  if (posts.isEmpty) {
+    posts = getMockedPosts();
+  }
   notifyListeners();
   return posts;
 }</code></pre>
@@ -121,7 +123,7 @@ Future&lt;List&lt;TimelinePost&gt;&gt; fetchPosts(String? category) async {
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.3.0
+      2.3.1
   </span>
 
   
