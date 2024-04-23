@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the EmailPasswordLogin class from the flutter_login_service library, for the Dart programming language.">
-  <title>EmailPasswordLogin class - flutter_login_service library - Dart API</title>
+  <meta name="description" content="API docs for the LoginServiceInterface class from the flutter_login_service library, for the Dart programming language.">
+  <title>LoginServiceInterface class - flutter_login_service library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">flutter_login_service</a></li>
     <li><a href="../flutter_login_service/flutter_login_service-library.html">flutter_login_service.dart</a></li>
-    <li class="self-crumb">EmailPasswordLogin class</li>
+    <li class="self-crumb">LoginServiceInterface class</li>
   </ol>
-  <div class="self-name">EmailPasswordLogin</div>
+  <div class="self-name">LoginServiceInterface</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -55,48 +55,58 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="flutter_login_service&#47;flutter_login_service-library-sidebar.html"
-    data-below-sidebar="flutter_login_service&#47;EmailPasswordLogin-class-sidebar.html">
+    data-below-sidebar="flutter_login_service&#47;LoginServiceInterface-class-sidebar.html">
     <div>
-<h1><span class="kind-class">EmailPasswordLogin</span> class 
+<h1><span class="kind-class">LoginServiceInterface</span> class 
+    <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>A service to handle authentication.
+Implement this class to create a custom login service.</p>
+</section>
 
 
+    <section>
+      <dl class="dl-horizontal">
+        
+
+        
+        
+
+          <dt>Implementers</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="../flutter_login_service/LocalLoginService-class.html">LocalLoginService</a></li>
+          </ul></dd>
+
+
+        
+
+
+      </dl>
+    </section>
 
     
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="EmailPasswordLogin" class="callable">
-          <span class="name"><a href="../flutter_login_service/EmailPasswordLogin/EmailPasswordLogin.html">EmailPasswordLogin</a></span><span class="signature">({<span class="parameter" id="-param-email"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="-param-password"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span></span>})</span>
+        <dt id="LoginServiceInterface" class="callable">
+          <span class="name"><a href="../flutter_login_service/LoginServiceInterface/LoginServiceInterface.html">LoginServiceInterface</a></span><span class="signature">()</span>
         </dt>
         <dd>
           
-            <div class="constructor-modifier features">const</div>
         </dd>
     </dl>
   </section>
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
-        <dt id="email" class="property">
-  <span class="name"><a href="../flutter_login_service/EmailPasswordLogin/email.html">email</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
@@ -106,18 +116,6 @@
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="password" class="property">
-  <span class="name"><a href="../flutter_login_service/EmailPasswordLogin/password.html">password</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -137,10 +135,55 @@
   </section>
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
+        <dt id="getLoggedInUser" class="callable">
+  <span class="name"><a href="../flutter_login_service/LoginServiceInterface/getLoggedInUser.html">getLoggedInUser</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  <a href="../flutter_login_service/LoginServiceInterface/getLoggedInUser.html">getLoggedInUser</a> is used to get the currently logged in user.
+  
+
+</dd>
+
+        <dt id="loginWithEmailAndPassword" class="callable">
+  <span class="name"><a href="../flutter_login_service/LoginServiceInterface/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a></span><span class="signature">(<wbr><span class="parameter" id="loginWithEmailAndPassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, {</span><span class="parameter" id="loginWithEmailAndPassword-param-onMFA"><span class="type-annotation">dynamic</span> <span class="parameter-name">onMFA</span>(<span class="parameter" id="param-resolver"><span class="type-annotation">dynamic</span> <span class="parameter-name">resolver</span></span>)?</span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../flutter_login_service/LoginResponse-class.html">LoginResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  <a href="../flutter_login_service/LoginServiceInterface/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a> is used to login a user with email and
+password. If the login is successful, the response will contain
+a <code>LoginResponse</code> with the user object. If the login is not
+successful, the response will contain an <a href="../flutter_login_service/Error-class.html">Error</a> object with
+the error title and message.
+Optionally, you can provide an <code>onMFA</code> function to handle
+multi-factor authentication.
+  
+
+</dd>
+
+        <dt id="logout" class="callable">
+  <span class="name"><a href="../flutter_login_service/LoginServiceInterface/logout.html">logout</a></span><span class="signature">(<wbr><span class="parameter" id="logout-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  <a href="../flutter_login_service/LoginServiceInterface/logout.html">logout</a> is used to log out the currently logged in user.
+  
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -151,6 +194,21 @@
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="requestChangePassword" class="callable">
+  <span class="name"><a href="../flutter_login_service/LoginServiceInterface/requestChangePassword.html">requestChangePassword</a></span><span class="signature">(<wbr><span class="parameter" id="requestChangePassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="requestChangePassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../flutter_login_service/RequestPasswordResponse-class.html">RequestPasswordResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  <a href="../flutter_login_service/LoginServiceInterface/requestChangePassword.html">requestChangePassword</a> is used to request a password reset.
+If the request is successful, the response will contain a
+<code>RequestPasswordResponse</code> with <code>requestSuccesfull</code> set to true.
+  
 
 </dd>
 
@@ -208,7 +266,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">flutter_login_service</a></li>
     <li><a href="../flutter_login_service/flutter_login_service-library.html">flutter_login_service</a></li>
-    <li class="self-crumb">EmailPasswordLogin class</li>
+    <li class="self-crumb">LoginServiceInterface class</li>
 </ol>
 
 
