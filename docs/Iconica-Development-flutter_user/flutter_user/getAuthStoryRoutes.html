@@ -178,7 +178,7 @@
                         }
                       }
                     : null,
-                onForgotPassword: configuration.showForgotPassword
+                onForgotPassword: configuration.useForgotPassword
                     ? (email, ctx) async {
                         configuration.onForgotPassword?.call(
                           email,
@@ -397,6 +397,7 @@
                               ),
                             ),
                           ),
+                          const SizedBox(height: 20),
                         ],
                       ),
                     ),

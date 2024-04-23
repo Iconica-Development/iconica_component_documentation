@@ -81,16 +81,29 @@ Add the following configuration to your flutter_application:</p>
 </code></pre>
 <p>The routes that can be used to navigate are:</p>
 <p>For routing to the <code>LoginScreen</code>:</p>
-<pre class="language-dart"><code>  static const String loginScreen = '/loginScreen';
+<pre class="language-dart"><code>  static const String loginScreen = '/login';
 </code></pre>
 <p>For routing to the <code>RegistrationScreen</code>:</p>
-<pre class="language-dart"><code>  static const String registrationScreen = '/registrationScreen';
+<pre class="language-dart"><code>  static const String registrationScreen = '/register';
 </code></pre>
 <p>For routing to the <code>ForgotPasswordScreen</code>:</p>
-<pre class="language-dart"><code>  static const String forgotPasswordScreen = '/forgotPasswordScreen';
+<pre class="language-dart"><code>  static const String forgotPasswordScreen = '/forgot-password';
 </code></pre>
 <p>For routing to the <code>Onboarding</code>:</p>
 <pre class="language-dart"><code>  static const String onboarding = '/onboarding';
+</code></pre>
+<p>For routing to the <code>afterRegistration</code>:</p>
+<pre class="language-dart"><code>  static const String afterRegistration = '/after-registration';
+</code></pre>
+<p>For routing to the <code>beforeRegistration</code>:</p>
+<pre class="language-dart"><code>  static const String beforeRegistration = '/before-registration';
+</code></pre>
+<p>Some functions return a <code>OnboardedUserMixin</code> which can be used to check if the user has finished the onboarding.
+To use this mixin you should add the following to your user class:</p>
+<pre class="language-dart"><code>class YourUSer implements OnboardedUserMixin {
+  @override
+  bool onboarded;
+}
 </code></pre>
 <p>The <code>AuthUserStoryConfiguration</code> has its own parameters, as specified below:</p>
 <table>
@@ -154,7 +167,7 @@ Add the following configuration to your flutter_application:</p>
 <td>Whether to use the onboarding screen.</td>
 </tr>
 <tr>
-<td>showForgotPassword</td>
+<td>useForgotPassword</td>
 <td>Whether to show the forgot password button.</td>
 </tr>
 </tbody>

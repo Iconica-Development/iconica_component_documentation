@@ -65,7 +65,7 @@
       const
       <span class="name ">AuthUserStoryConfiguration</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-loginOptionsBuilder"><span class="type-annotation"><a href="../../flutter_user/LoginOptions-class.html">LoginOptions</a></span> <span class="parameter-name">loginOptionsBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
-<li><span class="parameter" id="-param-loginServiceBuilder"><span class="type-annotation"><a href="../../flutter_user/LoginService-class.html">LoginService</a></span> <span class="parameter-name">loginServiceBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span></span></li>
+<li><span class="parameter" id="-param-loginServiceBuilder"><span class="type-annotation"><a href="../../flutter_user/LoginServiceInterface-class.html">LoginServiceInterface</a></span> <span class="parameter-name">loginServiceBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-afterLoginRoute"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">afterLoginRoute</span>, </span></li>
 <li><span class="parameter" id="-param-onLogin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">onLogin</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span></li>
@@ -84,11 +84,11 @@
 <li><span class="parameter" id="param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span></li>
 <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
-<li><span class="parameter" id="-param-onForgotPassword"><span class="type-annotation">void</span> <span class="parameter-name">onForgotPassword</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, </span></li>
+<li><span class="parameter" id="-param-onForgotPassword"><span class="type-annotation">void</span> <span class="parameter-name">onForgotPassword</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span></li>
 <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-useRegistration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useRegistration</span> = <span class="default-value">true</span>, </span></li>
-<li><span class="parameter" id="-param-showForgotPassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showForgotPassword</span> = <span class="default-value">true</span>, </span></li>
+<li><span class="parameter" id="-param-useForgotPassword"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useForgotPassword</span> = <span class="default-value">true</span>, </span></li>
 <li><span class="parameter" id="-param-forgotPasswordDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">forgotPasswordDescription</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-loginPageBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loginPageBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
@@ -137,7 +137,7 @@
   this.onRegister,
   this.onForgotPassword,
   this.useRegistration = true,
-  this.showForgotPassword = true,
+  this.useForgotPassword = true,
   this.forgotPasswordDescription,
   this.loginPageBuilder,
   this.registrationPageBuilder,

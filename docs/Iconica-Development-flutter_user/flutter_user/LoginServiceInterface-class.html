@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the LocalLoginService class from the flutter_user library, for the Dart programming language.">
-  <title>LocalLoginService class - flutter_user library - Dart API</title>
+  <meta name="description" content="API docs for the LoginServiceInterface class from the flutter_user library, for the Dart programming language.">
+  <title>LoginServiceInterface class - flutter_user library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">flutter_user</a></li>
     <li><a href="../flutter_user/flutter_user-library.html">flutter_user.dart</a></li>
-    <li class="self-crumb">LocalLoginService class</li>
+    <li class="self-crumb">LoginServiceInterface class</li>
   </ol>
-  <div class="self-name">LocalLoginService</div>
+  <div class="self-name">LoginServiceInterface</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -55,15 +55,17 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="flutter_user&#47;flutter_user-library-sidebar.html"
-    data-below-sidebar="flutter_user&#47;LocalLoginService-class-sidebar.html">
+    data-below-sidebar="flutter_user&#47;LoginServiceInterface-class-sidebar.html">
     <div>
-<h1><span class="kind-class">LocalLoginService</span> class 
+<h1><span class="kind-class">LoginServiceInterface</span> class 
+    <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>A local login service for testing purposes.</p>
+  <p>A service to handle authentication.
+Implement this class to create a custom login service.</p>
 </section>
 
 
@@ -72,14 +74,12 @@
         
 
         
-  <dt>Implemented types</dt>
-  <dd>
-    <ul class="comma-separated clazz-relationships">
-        <li><a href="../flutter_user/LoginServiceInterface-class.html">LoginServiceInterface</a></li>
-    </ul>
-  </dd>
         
 
+          <dt>Implementers</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="../flutter_user/LocalLoginService-class.html">LocalLoginService</a></li>
+          </ul></dd>
 
 
         
@@ -93,8 +93,8 @@
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="LocalLoginService" class="callable">
-          <span class="name"><a href="../flutter_user/LocalLoginService/LocalLoginService.html">LocalLoginService</a></span><span class="signature">()</span>
+        <dt id="LoginServiceInterface" class="callable">
+          <span class="name"><a href="../flutter_user/LoginServiceInterface/LoginServiceInterface.html">LoginServiceInterface</a></span><span class="signature">()</span>
         </dt>
         <dd>
           
@@ -140,47 +140,47 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="getLoggedInUser" class="callable">
-  <span class="name"><a href="../flutter_user/LocalLoginService/getLoggedInUser.html">getLoggedInUser</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../flutter_user/LoginServiceInterface/getLoggedInUser.html">getLoggedInUser</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
   </span>
   
 
 </dt>
 <dd>
-  <a href="../flutter_user/LocalLoginService/getLoggedInUser.html">getLoggedInUser</a> is used to get the currently logged in user.
-  <div class="features"><span class="feature">override</span></div>
+  <a href="../flutter_user/LoginServiceInterface/getLoggedInUser.html">getLoggedInUser</a> is used to get the currently logged in user.
+  
 
 </dd>
 
         <dt id="loginWithEmailAndPassword" class="callable">
-  <span class="name"><a href="../flutter_user/LocalLoginService/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a></span><span class="signature">(<wbr><span class="parameter" id="loginWithEmailAndPassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, {</span><span class="parameter" id="loginWithEmailAndPassword-param-onMFA"><span class="type-annotation">dynamic</span> <span class="parameter-name">onMFA</span>(<span class="parameter" id="param-resolver"><span class="type-annotation">dynamic</span> <span class="parameter-name">resolver</span></span>)?</span>})
+  <span class="name"><a href="../flutter_user/LoginServiceInterface/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a></span><span class="signature">(<wbr><span class="parameter" id="loginWithEmailAndPassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-password"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span><span class="parameter" id="loginWithEmailAndPassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, {</span><span class="parameter" id="loginWithEmailAndPassword-param-onMFA"><span class="type-annotation">dynamic</span> <span class="parameter-name">onMFA</span>(<span class="parameter" id="param-resolver"><span class="type-annotation">dynamic</span> <span class="parameter-name">resolver</span></span>)?</span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../flutter_user/LoginResponse-class.html">LoginResponse</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  <a href="../flutter_user/LocalLoginService/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a> is used to login a user with email and
+  <a href="../flutter_user/LoginServiceInterface/loginWithEmailAndPassword.html">loginWithEmailAndPassword</a> is used to login a user with email and
 password. If the login is successful, the response will contain
 a <code>LoginResponse</code> with the user object. If the login is not
 successful, the response will contain an <a href="../flutter_user/Error-class.html">Error</a> object with
 the error title and message.
 Optionally, you can provide an <code>onMFA</code> function to handle
 multi-factor authentication.
-  <div class="features"><span class="feature">override</span></div>
+  
 
 </dd>
 
         <dt id="logout" class="callable">
-  <span class="name"><a href="../flutter_user/LocalLoginService/logout.html">logout</a></span><span class="signature">(<wbr><span class="parameter" id="logout-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+  <span class="name"><a href="../flutter_user/LoginServiceInterface/logout.html">logout</a></span><span class="signature">(<wbr><span class="parameter" id="logout-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  <a href="../flutter_user/LocalLoginService/logout.html">logout</a> is used to log out the currently logged in user.
-  <div class="features"><span class="feature">override</span></div>
+  <a href="../flutter_user/LoginServiceInterface/logout.html">logout</a> is used to log out the currently logged in user.
+  
 
 </dd>
 
@@ -198,17 +198,17 @@ multi-factor authentication.
 </dd>
 
         <dt id="requestChangePassword" class="callable">
-  <span class="name"><a href="../flutter_user/LocalLoginService/requestChangePassword.html">requestChangePassword</a></span><span class="signature">(<wbr><span class="parameter" id="requestChangePassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="requestChangePassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+  <span class="name"><a href="../flutter_user/LoginServiceInterface/requestChangePassword.html">requestChangePassword</a></span><span class="signature">(<wbr><span class="parameter" id="requestChangePassword-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span><span class="parameter" id="requestChangePassword-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../flutter_user/RequestPasswordResponse-class.html">RequestPasswordResponse</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  <a href="../flutter_user/LocalLoginService/requestChangePassword.html">requestChangePassword</a> is used to request a password reset.
+  <a href="../flutter_user/LoginServiceInterface/requestChangePassword.html">requestChangePassword</a> is used to request a password reset.
 If the request is successful, the response will contain a
 <code>RequestPasswordResponse</code> with <code>requestSuccesfull</code> set to true.
-  <div class="features"><span class="feature">override</span></div>
+  
 
 </dd>
 
@@ -266,7 +266,7 @@ If the request is successful, the response will contain a
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">flutter_user</a></li>
     <li><a href="../flutter_user/flutter_user-library.html">flutter_user</a></li>
-    <li class="self-crumb">LocalLoginService class</li>
+    <li class="self-crumb">LoginServiceInterface class</li>
 </ol>
 
 
