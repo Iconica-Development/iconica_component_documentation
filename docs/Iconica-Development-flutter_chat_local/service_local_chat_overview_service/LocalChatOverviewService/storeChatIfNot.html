@@ -77,6 +77,9 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Creates the chat if it does not exist.</p>
+</section>
 
 
     
@@ -87,6 +90,7 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) {
   var chatExists = _chats.any((element) =&gt; element.id == chat.id);
 
   if (!chatExists) {
+    chat.id = chat.hashCode.toString();
     _chats.add(chat);
     _chatsController.add([..._chats]);
     notifyListeners();
@@ -130,7 +134,7 @@ Future&lt;ChatModel&gt; storeChatIfNot(ChatModel chat) {
 <footer>
   <span class="no-break">
     flutter_chat_local
-      1.4.1
+      1.4.2
   </span>
 
   
