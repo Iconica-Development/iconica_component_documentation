@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
       const
       <span class="name ">TimelineOptions</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-theme"><span class="type-annotation"><a href="../../flutter_timeline_view/TimelineTheme-class.html">TimelineTheme</a></span> <span class="parameter-name">theme</span> = <span class="default-value">const TimelineTheme()</span>, </span></li>
-<li><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../../flutter_timeline_view/TimelineTranslations-class.html">TimelineTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const TimelineTranslations.empty()</span>, </span></li>
+<li><span class="parameter" id="-param-translations"><span class="type-annotation"><a href="../../flutter_timeline_view/TimelineTranslations-class.html">TimelineTranslations</a></span> <span class="parameter-name">translations</span> = <span class="default-value">const TimelineTranslations()</span>, </span></li>
 <li><span class="parameter" id="-param-imagePickerConfig"><span class="type-annotation">ImagePickerConfig</span> <span class="parameter-name">imagePickerConfig</span> = <span class="default-value">const ImagePickerConfig()</span>, </span></li>
 <li><span class="parameter" id="-param-imagePickerTheme"><span class="type-annotation">ImagePickerTheme</span> <span class="parameter-name">imagePickerTheme</span> = <span class="default-value">const ImagePickerTheme()</span>, </span></li>
 <li><span class="parameter" id="-param-timelinePostHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">timelinePostHeight</span>, </span></li>
@@ -85,7 +85,7 @@
 <li><span class="parameter" id="-param-anonymousAvatarBuilder"><span class="type-annotation"><a href="../../flutter_timeline_view/UserAvatarBuilder.html">UserAvatarBuilder</a>?</span> <span class="parameter-name">anonymousAvatarBuilder</span>, </span></li>
 <li><span class="parameter" id="-param-nameBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">nameBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation">TimelinePosterUserModel?</span></span></li>
 </ol>)?, </span></li>
-<li><span class="parameter" id="-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.symmetric(vertical: 12.0)</span>, </span></li>
+<li><span class="parameter" id="-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.only(left: 12.0, top: 24.0, right: 12.0, bottom: 12.0)</span>, </span></li>
 <li><span class="parameter" id="-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">26</span>, </span></li>
 <li><span class="parameter" id="-param-postWidgetHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">postWidgetHeight</span>, </span></li>
 <li><span class="parameter" id="-param-postPadding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">postPadding</span> = <span class="default-value">const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0)</span>, </span></li>
@@ -96,6 +96,16 @@
 <li><span class="parameter" id="-param-maxTitleLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxTitleLength</span>, </span></li>
 <li><span class="parameter" id="-param-minContentLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">minContentLength</span>, </span></li>
 <li><span class="parameter" id="-param-maxContentLength"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxContentLength</span>, </span></li>
+<li><span class="parameter" id="-param-categorySelectorButtonBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">categorySelectorButtonBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="param-onPressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onPressed</span>(), </span></li>
+<li><span class="parameter" id="param-text"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">text</span></span></li>
+</ol>)?, </span></li>
+<li><span class="parameter" id="-param-postOverviewButtonBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">postOverviewButtonBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="param-onPressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onPressed</span>(), </span></li>
+<li><span class="parameter" id="param-text"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">text</span></span></li>
+</ol>)?, </span></li>
+<li><span class="parameter" id="-param-titleInputDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a>?</span> <span class="parameter-name">titleInputDecoration</span>, </span></li>
+<li><span class="parameter" id="-param-contentInputDecoration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/InputDecoration-class.html">InputDecoration</a>?</span> <span class="parameter-name">contentInputDecoration</span>, </span></li>
 </ol>})
     </section>
 
@@ -107,7 +117,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">const TimelineOptions({
   this.theme = const TimelineTheme(),
-  this.translations = const TimelineTranslations.empty(),
+  this.translations = const TimelineTranslations(),
   this.imagePickerConfig = const ImagePickerConfig(),
   this.imagePickerTheme = const ImagePickerTheme(),
   this.timelinePostHeight,
@@ -132,7 +142,8 @@
   this.userAvatarBuilder,
   this.anonymousAvatarBuilder,
   this.nameBuilder,
-  this.padding = const EdgeInsets.symmetric(vertical: 12.0),
+  this.padding =
+      const EdgeInsets.only(left: 12.0, top: 24.0, right: 12.0, bottom: 12.0),
   this.iconSize = 26,
   this.postWidgetHeight,
   this.postPadding =
@@ -144,6 +155,10 @@
   this.maxTitleLength,
   this.minContentLength,
   this.maxContentLength,
+  this.categorySelectorButtonBuilder,
+  this.postOverviewButtonBuilder,
+  this.titleInputDecoration,
+  this.contentInputDecoration,
 });</code></pre>
 </section>
 
@@ -178,7 +193,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.3.1
+      3.0.0
   </span>
 
   

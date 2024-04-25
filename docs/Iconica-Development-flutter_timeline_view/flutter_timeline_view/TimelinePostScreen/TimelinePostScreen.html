@@ -68,6 +68,7 @@
 <li><span class="parameter" id="-param-options"><span>required</span> <span class="type-annotation"><a href="../../flutter_timeline_view/TimelineOptions-class.html">TimelineOptions</a></span> <span class="parameter-name">options</span>, </span></li>
 <li><span class="parameter" id="-param-post"><span>required</span> <span class="type-annotation">TimelinePost</span> <span class="parameter-name">post</span>, </span></li>
 <li><span class="parameter" id="-param-onPostDelete"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a></span> <span class="parameter-name">onPostDelete</span>, </span></li>
+<li><span class="parameter" id="-param-isOverviewScreen"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isOverviewScreen</span> = <span class="default-value">false</span>, </span></li>
 <li><span class="parameter" id="-param-onUserTap"><span class="type-annotation">dynamic</span> <span class="parameter-name">onUserTap</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-userId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">userId</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
@@ -86,6 +87,7 @@
   required this.options,
   required this.post,
   required this.onPostDelete,
+  this.isOverviewScreen = false,
   this.onUserTap,
   super.key,
 });</code></pre>
@@ -122,7 +124,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.3.1
+      3.0.0
   </span>
 
   

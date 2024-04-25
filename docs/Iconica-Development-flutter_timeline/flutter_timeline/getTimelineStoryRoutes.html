@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/14.0.0/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getTimelineStoryRoutes</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getTimelineStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_timeline/TimelineUserStoryConfiguration-class.html">TimelineUserStoryConfiguration</a>?</span> <span class="parameter-name">configuration</span>, </span></li>
 </ol>})
 
@@ -114,9 +114,9 @@ If no configuration is provided, default values will be used.</p>
         );
 
         var button = FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
-          onPressed: () async =&gt; context.go(
-            TimelineUserStoryRoutes.timelinePostCreation,
+          backgroundColor: const Color(0xff71C6D1),
+          onPressed: () async =&gt; context.push(
+            TimelineUserStoryRoutes.timelineCategorySelection,
           ),
           shape: const CircleBorder(),
           child: const Icon(
@@ -133,14 +133,66 @@ If no configuration is provided, default values will be used.</p>
                   ?.call(context, timelineScreen, button) ??
               Scaffold(
                 appBar: AppBar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color(0xff212121),
                   title: Text(
-                    &#39;Iconinstagram&#39;,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    config
+                        .optionsBuilder(context)
+                        .translations
+                        .timeLineScreenTitle!,
+                    style: const TextStyle(
+                      color: Color(0xff71C6D1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
                 body: timelineScreen,
                 floatingActionButton: button,
+              ),
+        );
+      },
+    ),
+    GoRoute(
+      path: TimelineUserStoryRoutes.timelineCategorySelection,
+      pageBuilder: (context, state) {
+        var timelineSelectionScreen = TimelineSelectionScreen(
+          options: config.optionsBuilder(context),
+          categories: config
+              .optionsBuilder(context)
+              .categoriesOptions
+              .categoriesBuilder!(context),
+          onCategorySelected: (category) async {
+            await context.push(
+              TimelineUserStoryRoutes.timelinepostCreation(category.title),
+            );
+          },
+        );
+
+        var backButton = IconButton(
+          color: Colors.white,
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () =&gt; context.go(TimelineUserStoryRoutes.timelineHome),
+        );
+
+        return buildScreenWithoutTransition(
+          context: context,
+          state: state,
+          child: config.categorySelectionOpenPageBuilder
+                  ?.call(context, timelineSelectionScreen) ??
+              Scaffold(
+                appBar: AppBar(
+                  leading: backButton,
+                  backgroundColor: const Color(0xff212121),
+                  title: Text(
+                    config.optionsBuilder(context).translations.postCreation!,
+                    style: const TextStyle(
+                      color: Color(0xff71C6D1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                body: timelineSelectionScreen,
               ),
         );
       },
@@ -174,10 +226,14 @@ If no configuration is provided, default values will be used.</p>
               Scaffold(
                 appBar: AppBar(
                   leading: backButton,
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color(0xff212121),
                   title: Text(
-                    &#39;Category&#39;,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    post.category ?? &#39;Category&#39;,
+                    style: const TextStyle(
+                      color: Color(0xff71C6D1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
                 body: timelinePostWidget,
@@ -188,6 +244,7 @@ If no configuration is provided, default values will be used.</p>
     GoRoute(
       path: TimelineUserStoryRoutes.timelinePostCreation,
       pageBuilder: (context, state) {
+        var category = state.pathParameters[&#39;category&#39;];
         var timelinePostCreationWidget = TimelinePostCreationScreen(
           userId: config.userId,
           options: config.optionsBuilder(context),
@@ -208,11 +265,16 @@ If no configuration is provided, default values will be used.</p>
             extra: post,
           ),
           enablePostOverviewScreen: config.enablePostOverviewScreen,
+          postCategory: category,
         );
 
         var backButton = IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () =&gt; context.go(TimelineUserStoryRoutes.timelineHome),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+          onPressed: () =&gt;
+              context.go(TimelineUserStoryRoutes.timelineCategorySelection),
         );
 
         return buildScreenWithoutTransition(
@@ -222,12 +284,16 @@ If no configuration is provided, default values will be used.</p>
                   ?.call(context, timelinePostCreationWidget, backButton) ??
               Scaffold(
                 appBar: AppBar(
-                  backgroundColor: Colors.black,
-                  title: Text(
-                    config.optionsBuilder(context).translations.postCreation,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
+                  backgroundColor: const Color(0xff212121),
                   leading: backButton,
+                  title: Text(
+                    config.optionsBuilder(context).translations.postCreation!,
+                    style: const TextStyle(
+                      color: Color(0xff71C6D1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ),
                 body: timelinePostCreationWidget,
               ),
@@ -250,6 +316,13 @@ If no configuration is provided, default values will be used.</p>
             }
           },
         );
+        var backButton = IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+          onPressed: () async =&gt; context.pop(),
+        );
 
         return buildScreenWithoutTransition(
           context: context,
@@ -258,7 +331,21 @@ If no configuration is provided, default values will be used.</p>
                 context,
                 timelinePostOverviewWidget,
               ) ??
-              timelinePostOverviewWidget,
+              Scaffold(
+                appBar: AppBar(
+                  leading: backButton,
+                  backgroundColor: const Color(0xff212121),
+                  title: Text(
+                    config.optionsBuilder(context).translations.postOverview!,
+                    style: const TextStyle(
+                      color: Color(0xff71C6D1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                body: timelinePostOverviewWidget,
+              ),
         );
       },
     ),
@@ -296,7 +383,7 @@ If no configuration is provided, default values will be used.</p>
 <footer>
   <span class="no-break">
     flutter_timeline
-      2.3.1
+      3.0.0
   </span>
 
   

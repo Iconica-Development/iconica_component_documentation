@@ -95,7 +95,10 @@
 <li><span class="parameter" id="-param-postWidgetBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">postWidgetBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-post"><span class="type-annotation"><a href="../../flutter_timeline/TimelinePost-class.html">TimelinePost</a></span> <span class="parameter-name">post</span></span></li>
 </ol>)?, </span></li>
 <li><span class="parameter" id="-param-afterPostCreationGoHome"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">afterPostCreationGoHome</span> = <span class="default-value">false</span>, </span></li>
-<li><span class="parameter" id="-param-enablePostOverviewScreen"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enablePostOverviewScreen</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="-param-enablePostOverviewScreen"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enablePostOverviewScreen</span> = <span class="default-value">true</span>, </span></li>
+<li><span class="parameter" id="-param-categorySelectionOpenPageBuilder"><span class="type-annotation">dynamic</span> <span class="parameter-name">categorySelectionOpenPageBuilder</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="param-child"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">child</span></span></li>
+</ol>)?, </span></li>
 </ol>})
     </section>
 
@@ -144,7 +147,8 @@ that post.</p>
   this.filterEnabled = false,
   this.postWidgetBuilder,
   this.afterPostCreationGoHome = false,
-  this.enablePostOverviewScreen = false,
+  this.enablePostOverviewScreen = true,
+  this.categorySelectionOpenPageBuilder,
 });</code></pre>
 </section>
 
@@ -179,7 +183,7 @@ that post.</p>
 <footer>
   <span class="no-break">
     flutter_timeline
-      2.3.1
+      3.0.0
   </span>
 
   

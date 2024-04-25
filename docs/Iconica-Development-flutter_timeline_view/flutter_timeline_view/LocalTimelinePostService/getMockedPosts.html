@@ -80,63 +80,47 @@
       TimelinePost(
         id: &#39;Post0&#39;,
         creatorId: &#39;test_user&#39;,
-        title: &#39;Post 0&#39;,
-        category: null,
+        title: &#39;De topper van de maand september&#39;,
+        category: &#39;Category&#39;,
         imageUrl:
-            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
-        content: &#39;Standard post without image made by the current user&#39;,
-        likes: 0,
+            &#39;https:&#47;&#47;firebasestorage.googleapis.com&#47;v0&#47;b&#47;appshell-demo.appspot.com&#47;o&#47;do_not_delete_1.png?alt=media&amp;token=e4b2f9f3-c81f-4ac7-a938-e846691399f7&#39;,
+        content: &#39;Dit is onze topper van de maand september! Gefeliciteerd!&#39;,
+        likes: 72,
         reaction: 0,
         createdAt: DateTime.now(),
-        reactionEnabled: false,
+        reactionEnabled: true,
         creator: const TimelinePosterUserModel(
           userId: &#39;test_user&#39;,
           imageUrl:
-              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
-          firstName: &#39;Dirk&#39;,
-          lastName: &#39;lukassen&#39;,
+              &#39;https:&#47;&#47;firebasestorage.googleapis.com&#47;v0&#47;b&#47;appshell-demo.appspot.com&#47;o&#47;do_not_delete_3.png?alt=media&amp;token=cd7c156d-0dda-43be-9199-f7d31c30132e&#39;,
+          firstName: &#39;Robin&#39;,
+          lastName: &#39;De Vries&#39;,
         ),
       ),
       TimelinePost(
         id: &#39;Post1&#39;,
         creatorId: &#39;test_user2&#39;,
-        title: &#39;Post 1&#39;,
-        category: null,
-        content: &#39;Standard post with image made by a different user and &#39;
-            &#39;reactions enabled&#39;,
-        likes: 0,
-        reaction: 0,
-        createdAt: DateTime.now(),
-        reactionEnabled: false,
-        imageUrl:
-            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
-        creator: const TimelinePosterUserModel(
-          userId: &#39;test_user&#39;,
-          imageUrl:
-              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
-          firstName: &#39;Dirk&#39;,
-          lastName: &#39;lukassen&#39;,
-        ),
-      ),
-      TimelinePost(
-        id: &#39;Post2&#39;,
-        creatorId: &#39;test_user&#39;,
-        title: &#39;Post 2&#39;,
-        category: null,
-        content: &#39;Standard post with image made by the current user and&#39;
-            &#39; reactions enabled&#39;,
-        likes: 0,
+        title: &#39;De soep van de week is: Aspergesoep&#39;,
+        category: &#39;Category with two lines&#39;,
+        content:
+            &#39;Aspergesoep is echt een heerlijke delicatesse. Deze soep wordt&#39;
+            &#39; vaak gemaakt met verse asperges, bouillon en wat kruiden voor&#39;
+            &#39; smaak. Het is een perfecte keuze voor een lichte en smaakvolle&#39;
+            &#39; maaltijd, vooral in het voorjaar wanneer asperges in seizoen&#39;
+            &#39; zijn. We serveren het met een vleugje room en wat knapperige&#39;
+            &#39; croutons voor die extra touch.&#39;,
+        likes: 72,
         reaction: 0,
         createdAt: DateTime.now(),
         reactionEnabled: true,
         imageUrl:
-            &#39;https:&#47;&#47;t4.ftcdn.net&#47;jpg&#47;02&#47;77&#47;71&#47;45&#47;240_F_277714513_fQ0akmI3TQxa0wkPCLeO12Rx3cL2AuIf.jpg&#39;,
+            &#39;https:&#47;&#47;firebasestorage.googleapis.com&#47;v0&#47;b&#47;appshell-demo.appspot.com&#47;o&#47;do_not_delete_2.png?alt=media&amp;token=ee4a8771-531f-4d1d-8613-a2366771e775&#39;,
         creator: const TimelinePosterUserModel(
           userId: &#39;test_user&#39;,
           imageUrl:
-              &#39;https:&#47;&#47;cdn.britannica.com&#47;68&#47;143568-050-5246474F&#47;Donkey.jpg?w=400&amp;h=300&amp;c=crop&#39;,
-          firstName: &#39;Dirk&#39;,
-          lastName: &#39;lukassen&#39;,
+              &#39;https:&#47;&#47;firebasestorage.googleapis.com&#47;v0&#47;b&#47;appshell-demo.appspot.com&#47;o&#47;do_not_delete_4.png?alt=media&amp;token=775d4d10-6d2b-4aef-a51b-ba746b7b137f&#39;,
+          firstName: &#39;Elise&#39;,
+          lastName: &#39;Welling&#39;,
         ),
       ),
     ];</code></pre>
@@ -173,7 +157,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.3.1
+      3.0.0
   </span>
 
   

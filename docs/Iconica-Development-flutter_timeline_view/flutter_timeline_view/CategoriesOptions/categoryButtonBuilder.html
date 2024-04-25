@@ -63,7 +63,7 @@
 
       <section class="multi-line-signature">
         
-        (<a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">({<span class="parameter" id="param-categoryKey"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">categoryKey</span>, </span><span class="parameter" id="param-categoryName"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">categoryName</span>, </span><span class="parameter" id="param-onTap"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Function-class.html">Function</a></span> <span class="parameter-name">onTap</span>, </span><span class="parameter" id="param-selected"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">selected</span></span>})</span>?)
+        (<a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-categoryKey"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">categoryKey</span>, </span><span class="parameter" id="param-categoryName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">categoryName</span>, </span><span class="parameter" id="param-onTap"><span class="type-annotation">dynamic</span> <span class="parameter-name">onTap</span>(), </span><span class="parameter" id="param-selected"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">selected</span>, </span><span class="parameter" id="param-isOnTop"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isOnTop</span></span>)</span>?)
         <span class="name ">categoryButtonBuilder</span>
         <div class="features"><span class="feature">final</span></div>
 
@@ -76,12 +76,14 @@
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final Widget Function({
-  required String? categoryKey,
-  required String categoryName,
-  required Function onTap,
-  required bool selected,
-})? categoryButtonBuilder;</code></pre>
+  <pre class="language-dart"><code class="language-dart">final Widget Function(
+  String? categoryKey,
+  String categoryName,
+  Function() onTap,
+  &#47;&#47; ignore: avoid_positional_boolean_parameters
+  bool selected,
+  bool isOnTop,
+)? categoryButtonBuilder;</code></pre>
 </section>
 
 
@@ -115,7 +117,7 @@
 <footer>
   <span class="no-break">
     flutter_timeline_view
-      2.3.1
+      3.0.0
   </span>
 
   
