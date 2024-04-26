@@ -64,7 +64,7 @@
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/13.2.4/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/go_router/14.0.1/go_router/GoRoute-class.html">GoRoute</a></span>&gt;</span></span>
 <span class="name ">getAuthStoryRoutes</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getAuthStoryRoutes-param-configuration"><span class="type-annotation"><a href="../flutter_user/AuthUserStoryConfiguration-class.html">AuthUserStoryConfiguration</a></span> <span class="parameter-name">configuration</span></span></li>
 </ol>)
 
@@ -226,7 +226,9 @@
                 registrationOptions: configuration.registrationOptionsBuilder
                         ?.call(context) ??
                     RegistrationOptions(
-                      registrationRepository: ExampleRegistrationRepository(),
+                      registrationRepository:
+                          configuration.registrationRepository ??
+                              ExampleRegistrationRepository(),
                       registrationSteps: RegistrationOptions.getDefaultSteps(),
                       afterRegistration: () async =&gt; context.push(
                         configuration.useAfterRegistrationPage
@@ -439,7 +441,7 @@
 <footer>
   <span class="no-break">
     flutter_user
-      3.0.0
+      4.0.1
   </span>
 
   
