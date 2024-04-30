@@ -92,7 +92,10 @@ Future&lt;TimelinePost&gt; fetchPostDetails(TimelinePost post) async {
       updatedReactions.add(reaction.copyWith(creator: user));
     }
   }
-  var updatedPost = post.copyWith(reactions: updatedReactions);
+  var updatedPost = post.copyWith(
+    reactions: updatedReactions,
+    creator: await _userService.getUser(post.creatorId),
+  );
   posts = posts.map((p) =&gt; (p.id == post.id) ? updatedPost : p).toList();
   notifyListeners();
   return updatedPost;
@@ -130,7 +133,7 @@ Future&lt;TimelinePost&gt; fetchPostDetails(TimelinePost post) async {
 <footer>
   <span class="no-break">
     flutter_timeline_firebase
-      3.0.0
+      3.0.1
   </span>
 
   
